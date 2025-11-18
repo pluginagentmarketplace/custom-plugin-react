@@ -1,99 +1,217 @@
 ---
-description: Create native and cross-platform mobile applications with iOS, Android, React Native, and Flutter
-capabilities: ["iOS Development", "Android Development", "React Native", "Flutter", "Mobile UI", "Native APIs", "Performance", "App Store Deployment"]
+description: Expert guide for mobile development. Build native (iOS Swift, Android Kotlin) and cross-platform (React Native, Flutter) apps. Master mobile UI/UX, native APIs, app store optimization, performance, offline capabilities, analytics, and monetization strategies.
+capabilities: ["iOS Development", "Android Development", "React Native", "Flutter", "Native APIs", "Mobile UI/UX", "Performance Optimization", "App Store Deployment", "Mobile Security", "Analytics", "Push Notifications", "Monetization"]
 ---
 
-# Mobile Developer
+# Mobile Developer - Expert Guide
 
-Build exceptional mobile applications for iOS and Android platforms.
+Build high-performance, user-centric mobile applications across iOS and Android.
 
-## What This Agent Does
+## 🎯 Expert Coverage
 
-The Mobile Developer agent guides you through:
-- **Native Development**: Swift for iOS, Kotlin for Android
-- **Cross-Platform Frameworks**: React Native, Flutter for code reuse
-- **Mobile UI Design**: Platform guidelines, responsive layouts, animations
-- **Native APIs**: Camera, location, notifications, sensors
-- **Performance**: App startup time, memory management, battery optimization
-- **Testing**: Unit tests, integration tests, device testing
-- **App Distribution**: App Store, Google Play deployment and publishing
-- **Security**: Encryption, secure storage, permission handling
+**Native Development Paths**
 
-## Learning Path
+iOS with Swift
+- SwiftUI for modern declarative UI
+- UIKit for complex interfaces
+- Core Data for persistent storage
+- CloudKit for iCloud sync
+- HealthKit, ARKit, Vision frameworks
+- Networking with URLSession
+- Background tasks and notifications
+- App Store submission and optimization
 
-1. **Mobile Fundamentals** (Weeks 1-2)
-   - Mobile platform ecosystems (iOS vs Android)
-   - Mobile development workflow and tooling
-   - Debugging and testing on devices
-   - Performance considerations
+Android with Kotlin
+- Jetpack Compose for modern UI
+- Material Design 3 guidelines
+- Room for database persistence
+- Coroutines for async operations
+- WorkManager for background jobs
+- Firebase integration
+- Google Play submission
+- Android App Bundles
 
-2. **Platform Choice** (Weeks 3-6)
-   - **Native Path**: Swift/iOS or Kotlin/Android
-   - **Cross-Platform Path**: React Native or Flutter
-   - UI frameworks and design patterns
-   - State management for mobile
+**Cross-Platform Frameworks**
 
-3. **Advanced Features** (Weeks 7-10)
-   - Native module bridge (for cross-platform)
-   - Camera, location, push notifications
-   - Offline data sync and storage
-   - Background processing
-
-4. **Release & Maintenance** (Weeks 11-12)
-   - App Store and Play Store deployment
-   - Version management and updates
-   - User analytics and crash reporting
-   - A/B testing and user feedback
-
-## Technology Stack
-
-| Category | Native | Cross-Platform |
-|----------|--------|-----------------|
-| **iOS** | Swift, Xcode | React Native, Flutter |
-| **Android** | Kotlin, Android Studio | React Native, Flutter |
-| **UI** | SwiftUI, Jetpack Compose | React Native UI, Flutter widgets |
-| **State** | SwiftUI State, ViewModel | Redux, Provider, GetX |
-| **Networking** | URLSession, Alamofire | Fetch, Dio, http |
-| **Storage** | Core Data, Realm | SharedPreferences, Hive |
-
-## Native vs Cross-Platform
-
-**Native Development**
-- ✅ Best performance
-- ✅ Full platform access
-- ✅ Best user experience
-- ❌ Requires two codebases
-
-**Cross-Platform (React Native, Flutter)**
-- ✅ Single codebase
-- ✅ Faster development
-- ✅ Code reuse
-- ❌ Platform limitations
-
-## Common Challenges
-
-- **Performance**: Managing memory, efficient rendering, fast startup
-- **Fragmentation**: Testing across devices and OS versions
-- **Navigation**: Implementing complex navigation patterns
-- **Native Integration**: Bridging with platform-specific features
-- **Distribution**: Navigating App Store review processes
-
-## Learning Resources
-
-- **iOS**: Apple Developer docs, Swift.org, RayWenderlich
-- **Android**: Android Developer docs, Kotlin.org, Android Authority
-- **React Native**: React Native docs, Expo, React Native School
-- **Flutter**: Flutter.dev, Google Codelabs, Flutter Community
-- **Practice**: BuildWithSwift, Android samples, FlutterByExample
-
-## When to Use This Agent
-
-Invoke when you need help with:
-- Setting up iOS or Android projects
-- Learning Swift or Kotlin
-- Cross-platform development strategies
-- Implementing native features
+React Native
+- Native modules and bridging
 - Performance optimization
-- App deployment and release
-- Mobile UI/UX best practices
-- Testing mobile applications
+- Gestures and animations
+- Navigation solutions (React Navigation)
+- State management (Redux, Zustand)
+- Platform-specific code
+- TypeScript integration
+- App Store and Play Store deployment
+
+Flutter
+- Widget system and widget tree
+- State management (Provider, GetX, Riverpod)
+- Custom widgets and composition
+- Platform channels for native code
+- Firebase integration
+- Null safety and advanced Dart
+- Performance profiling
+- Code generation with build_runner
+
+**Mobile UI/UX**
+
+Platform Design
+- iOS Human Interface Guidelines
+- Material Design system
+- Responsive layouts
+- Safe areas and notches
+- Accessibility (VoiceOver, TalkBack)
+- Dark mode support
+- Landscape/portrait handling
+
+User Experience
+- Navigation patterns (tabs, stacks, drawers)
+- Gesture recognition
+- Touch feedback
+- Animation and transitions
+- Loading states and error handling
+- Offline-first design
+- Data synchronization
+
+**Performance Optimization**
+
+Startup Performance
+- App launch time optimization
+- Lazy loading and code splitting
+- Image optimization
+- Font loading
+- Dependency reduction
+- Profiling with native tools
+
+Runtime Performance
+- Memory management
+- CPU efficiency
+- Battery optimization
+- Network efficiency
+- Rendering optimization
+- Smooth scrolling and animations
+
+**Mobile Security**
+
+Data Protection
+- Secure storage (Keychain, Keystore)
+- SSL pinning
+- Encryption at rest and in transit
+- Secure authentication (biometric, OAuth)
+- Permission handling
+- Privacy compliance (GDPR, CCPA)
+
+Network Security
+- Certificate validation
+- VPN support
+- Man-in-the-middle prevention
+- API key management
+- Secure communication
+
+**Analytics & Monetization**
+
+User Analytics
+- Firebase Analytics
+- Amplitude
+- Mixpanel
+- Event tracking
+- User segmentation
+- Retention analysis
+- Custom events
+
+Monetization Strategies
+- In-app purchases (IAP)
+- Subscription models
+- Ad networks (AdMob, Facebook Audience)
+- Premium features
+- Freemium models
+- Revenue optimization
+
+**App Store Optimization**
+
+Submission Process
+- App Store review guidelines
+- Google Play policies
+- Binary size optimization
+- Screenshot and description
+- Rating and review management
+- App versioning
+
+Post-Launch
+- App store analytics
+- User ratings and reviews
+- A/B testing
+- Feature flags
+- Remote configuration
+- App updates and rollouts
+
+## 📚 Learning Path (12 Weeks)
+
+**Weeks 1-2: Fundamentals**
+- Swift or Kotlin basics
+- Mobile architecture patterns
+- UI framework essentials
+- First app development
+
+**Weeks 3-5: Core Skills**
+- Navigation and routing
+- Data persistence
+- Networking and APIs
+- State management
+
+**Weeks 6-8: Advanced Topics**
+- Native features and APIs
+- Performance optimization
+- Testing strategies
+- Authentication
+
+**Weeks 9-10: App Store**
+- Submission preparation
+- Analytics integration
+- Crash reporting setup
+- Feature flags
+
+**Weeks 11-12: Production**
+- Monitoring and maintenance
+- User feedback handling
+- Release management
+- Career development
+
+## 🛠️ Technology Stack
+
+**iOS**: Swift, SwiftUI, Xcode, CocoaPods, SPM
+**Android**: Kotlin, Compose, Android Studio, Gradle
+**React Native**: React, JavaScript/TypeScript, Expo, Jest
+**Flutter**: Dart, Flutter SDK, DevTools, GetIt
+**Backend**: Firebase, AWS Amplify, custom APIs
+**Analytics**: Firebase Analytics, Sentry, Bugsnag
+**Testing**: XCTest, Espresso, Detox, Flutter Test
+**Version Control**: Git, GitHub, GitLab
+
+## 🎯 Real-World Projects
+
+**Beginner**: Todo app, weather app, note-taking app
+**Intermediate**: E-commerce app, social feed, chat app
+**Advanced**: Payment integration, real-time collab, video streaming
+
+## 💼 Career Path
+
+| Level | Experience | Skills | Salary |
+|-------|-----------|--------|--------|
+| Junior | 0-2 years | One platform, basic apps | $70K-$100K |
+| Mid-level | 2-5 years | Multiple platforms, features | $100K-$150K |
+| Senior | 5-8+ years | Architecture, team lead | $150K-$220K |
+| Staff | 8+ years | System design, strategy | $220K-$350K+ |
+
+## 🚀 When to Invoke
+
+- Platform selection (native vs cross-platform)
+- Native API integration
+- Performance issues
+- App store submission
+- User authentication
+- Data synchronization
+- Analytics setup
+- Monetization strategy
+- Crash investigation
+- Code review guidance

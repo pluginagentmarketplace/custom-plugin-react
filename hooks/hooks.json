@@ -1,58 +1,205 @@
 {
   "hooks": [
     {
-      "id": "track-learning-progress",
+      "id": "learning-path-selected",
       "trigger": "user-interaction",
-      "event": "agent-invoked",
-      "description": "Track which agents and skills users interact with",
+      "event": "learn-path-selected",
+      "description": "Track selected learning path and initialize progress tracking",
       "enabled": true,
-      "action": "log-interaction"
+      "actions": [
+        "log-selection",
+        "initialize-progress",
+        "send-welcome-message",
+        "suggest-first-project"
+      ]
     },
     {
-      "id": "validate-assessment",
-      "trigger": "command-executed",
-      "event": "assess-skills",
-      "description": "Validate skill assessment answers and format response",
-      "enabled": true,
-      "action": "validate-and-format"
-    },
-    {
-      "id": "personalize-recommendations",
+      "id": "skills-assessment-completed",
       "trigger": "assessment-completed",
-      "description": "Generate personalized learning recommendations based on assessment",
+      "description": "Generate personalized recommendations based on assessment results",
       "enabled": true,
-      "action": "generate-recommendations"
+      "actions": [
+        "analyze-assessment",
+        "calculate-salary-projection",
+        "generate-career-plan",
+        "suggest-learning-path",
+        "notify-mentor"
+      ]
     },
     {
-      "id": "suggest-next-agent",
-      "trigger": "skill-mastered",
-      "description": "Suggest next specialization to explore based on current learning",
+      "id": "milestone-reached",
+      "trigger": "progress-milestone",
+      "description": "Celebrate learning milestones and provide encouragement",
       "enabled": true,
-      "action": "suggest-next-path"
+      "actions": [
+        "display-celebration",
+        "update-portfolio",
+        "suggest-next-milestone",
+        "share-achievement"
+      ]
     },
     {
-      "id": "milestone-celebration",
-      "trigger": "milestone-reached",
-      "description": "Celebrate learning milestones and completion",
+      "id": "community-integration",
+      "trigger": "resource-request",
+      "event": "find-resources",
+      "description": "Provide community suggestions and networking opportunities",
       "enabled": true,
-      "action": "show-milestone"
+      "actions": [
+        "fetch-community-data",
+        "personalize-communities",
+        "suggest-mentors",
+        "recommend-events"
+      ]
     },
     {
-      "id": "resource-cache-update",
+      "id": "progress-tracking",
+      "trigger": "agent-invoked",
+      "description": "Track which agents and skills users interact with for recommendations",
+      "enabled": true,
+      "actions": [
+        "log-interaction",
+        "update-learning-profile",
+        "suggest-adjacent-skills"
+      ]
+    },
+    {
+      "id": "content-validation",
+      "trigger": "command-executed",
+      "description": "Validate user input and provide helpful error messages",
+      "enabled": true,
+      "actions": [
+        "validate-input",
+        "provide-guidance",
+        "suggest-alternatives"
+      ]
+    },
+    {
+      "id": "resource-caching",
       "trigger": "command-executed",
       "event": "find-resources",
-      "description": "Cache and update resource listings periodically",
+      "description": "Cache and update resource listings to ensure freshness",
       "enabled": true,
-      "action": "update-cache"
+      "actions": [
+        "cache-resources",
+        "update-cache-periodically",
+        "validate-links"
+      ]
+    },
+    {
+      "id": "personalization-engine",
+      "trigger": "user-context",
+      "description": "Personalize recommendations based on user profile and history",
+      "enabled": true,
+      "actions": [
+        "build-user-profile",
+        "analyze-preferences",
+        "generate-recommendations",
+        "adapt-content"
+      ]
+    },
+    {
+      "id": "feedback-collection",
+      "trigger": "interaction-complete",
+      "description": "Collect feedback on learning experiences and agent helpfulness",
+      "enabled": true,
+      "actions": [
+        "request-feedback",
+        "store-feedback",
+        "improve-system"
+      ]
+    },
+    {
+      "id": "error-recovery",
+      "trigger": "error-occurred",
+      "description": "Graceful error handling with helpful guidance",
+      "enabled": true,
+      "actions": [
+        "log-error",
+        "provide-help",
+        "suggest-alternatives",
+        "escalate-if-needed"
+      ]
     }
   ],
+  
   "configuration": {
     "enable_progress_tracking": true,
+    "enable_personalization": true,
     "enable_recommendations": true,
     "enable_community_suggestions": true,
+    "enable_feedback_collection": true,
     "cache_resources": true,
     "cache_ttl_hours": 24,
+    "cache_refresh_interval_hours": 6,
     "log_level": "info",
-    "analytics_enabled": true
+    "analytics_enabled": true,
+    "privacy_compliant": true,
+    "gdpr_enabled": true,
+    "ccpa_enabled": true,
+    "performance_metrics": true,
+    "error_notifications": true,
+    "milestone_celebrations": true,
+    "mentor_matching": true,
+    "community_recommendations": true,
+    "salary_projections": true,
+    "skill_validation": true
+  },
+
+  "events": {
+    "learning_started": {
+      "description": "User starts a learning path",
+      "data": ["user_id", "specialization", "timestamp"]
+    },
+    "milestone_completed": {
+      "description": "User completes a milestone",
+      "data": ["user_id", "milestone_name", "time_taken"]
+    },
+    "project_submitted": {
+      "description": "User submits a project for review",
+      "data": ["user_id", "project_name", "project_link"]
+    },
+    "assessment_completed": {
+      "description": "User completes skill assessment",
+      "data": ["user_id", "scores", "recommendations"]
+    },
+    "resource_accessed": {
+      "description": "User accesses learning resource",
+      "data": ["user_id", "resource_type", "resource_name"]
+    },
+    "community_joined": {
+      "description": "User joins community",
+      "data": ["user_id", "community_name", "platform"]
+    }
+  },
+
+  "workflows": {
+    "onboarding": {
+      "steps": [
+        "welcome_message",
+        "skill_assessment",
+        "learning_path_selection",
+        "community_introduction",
+        "first_resource_recommendation"
+      ],
+      "duration": "30 minutes"
+    },
+    "weekly_check_in": {
+      "steps": [
+        "progress_review",
+        "next_week_planning",
+        "resource_recommendation",
+        "community_highlight"
+      ],
+      "schedule": "every_monday_9am"
+    },
+    "milestone_celebration": {
+      "steps": [
+        "achievement_badge",
+        "congratulations_message",
+        "next_milestone_preview",
+        "portfolio_update"
+      ],
+      "trigger": "milestone_completion"
+    }
   }
 }

@@ -1,145 +1,207 @@
-# /find-resources
+# /find-resources - Curated Learning Materials & Communities
 
-Discover learning resources, communities, and tools for your specialization.
+Find **official documentation, courses, books, communities, and tools** for any specialization.
 
-## Usage
+## 🎯 Usage
 
 ```
 /find-resources <specialization>
-```
-
-## Description
-
-Find curated learning resources, official documentation, communities, and tools for your chosen specialization.
-
-## Available Specializations
-
-- `frontend` - Frontend Development
-- `backend` - Backend Development
-- `devops` - DevOps & Infrastructure
-- `ai-ml` - AI & Machine Learning
-- `mobile` - Mobile Development
-- `data-engineering` - Data Engineering
-- `architecture` - System Architecture
-
-## Resource Categories
-
-For each specialization, you'll get:
-
-### 1. Official Documentation
-- Primary language/framework docs
-- API references
-- Official guides and tutorials
-
-### 2. Learning Platforms
-- Comprehensive courses
-- Interactive tutorials
-- Certifications available
-- Cost and time estimates
-
-### 3. Books & Papers
-- Recommended textbooks
-- Academic papers
-- Case studies
-- Design patterns guides
-
-### 4. Communities & Forums
-- Reddit communities
-- Discord servers
-- Slack groups
-- Stack Overflow tags
-- Dev.to publications
-
-### 5. Hands-on Practice
-- Coding challenge platforms
-- Project ideas
-- Open source contributions
-- Sandbox environments
-
-### 6. Tools & Libraries
-- Essential tools for the specialty
-- IDE/Editor recommendations
-- Testing frameworks
-- DevTools and utilities
-
-### 7. Blogs & Content Creators
-- Technical blogs
-- YouTube channels
-- Podcasts
-- Newsletter subscriptions
-
-### 8. Advanced Resources
-- Conference talks
-- Advanced tutorials
-- Research papers
-- Expert interviews
-
-## Example Usage
-
-```
 /find-resources frontend
-```
-
-Would provide:
-- React.dev, Vue.org, Angular.io docs
-- Frontend Masters, egghead.io courses
-- Eloquent JavaScript book
-- r/webdev, DEV.to communities
-- Frontend Mentor challenges
-- VS Code, Chrome DevTools
-- Dan Abramov, Sarah Drasner blogs
-
-```
+/find-resources backend
 /find-resources ai-ml
 ```
 
-Would provide:
-- PyTorch, TensorFlow, Hugging Face docs
-- Fast.ai, Andrew Ng courses
-- Deep Learning and ML books
-- r/MachineLearning community
-- Kaggle competitions
-- Jupyter, VS Code + extensions
-- Jeremy Howard, Andrej Karpathy content
+## 📚 Available Specializations
 
-## Resource Quality Ratings
+`frontend`, `backend`, `devops`, `ai-ml`, `mobile`, `data-engineering`, `architecture`
 
-Resources are rated by:
-- ⭐⭐⭐⭐⭐ Essential/highly recommended
-- ⭐⭐⭐⭐ Very good/valuable
-- ⭐⭐⭐ Good/useful
-- ⭐⭐ Okay/niche use
-- ⭐ Beginner-only
+## 📖 Resource Categories
 
-## How to Use Resources
+For each specialization, you get:
 
-1. **Start with Official Docs**
-   - Always the most accurate
-   - Maintained by creators
+### 1. **Official Documentation** ⭐⭐⭐⭐⭐
+- Primary sources maintained by creators
+- Always most accurate and up-to-date
+- Your first stop for learning
 
-2. **Combine Learning Methods**
-   - Mix video + books + hands-on
-   - Different learning styles
+### 2. **Learning Platforms** 📺
+**Free & Paid courses**:
+- Frontend Masters (advanced, subscription)
+- Egghead.io (bite-sized lessons)
+- Scrimba (interactive video)
+- Codecademy (structured paths)
+- Udemy (affordable courses)
+- Coursera (university-backed)
+- Pluralsight (professional)
 
-3. **Practice While Learning**
-   - Build projects simultaneously
-   - Don't just consume content
+**By Level**:
+- Beginner: Codecademy, Scrimba, freeCodeCamp
+- Intermediate: Frontend Masters, Egghead, course-specific
+- Advanced: System design masters, expert blogs
 
-4. **Engage with Communities**
+### 3. **Interactive Practice** 🎮
+- LeetCode (algorithms, coding)
+- HackerRank (problems, competitions)
+- Codewars (skill-based challenges)
+- Frontend Mentor (real projects)
+- LeetCode System Design (architecture)
+
+### 4. **Books & Papers** 📚
+Curated list organized by:
+- Beginner friendly
+- Deep dives
+- Reference material
+- Research papers
+- Design patterns
+
+### 5. **Communities & Forums** 👥
+
+**Discord Servers**:
+- Reactiflux (React)
+- Rustaceans (Rust)
+- Backend Developers
+- ML Engineering
+- Data Engineering
+
+**Reddit Communities**:
+- r/webdev (50K+ members)
+- r/golang
+- r/Python
+- r/MachineLearning
+- r/devops
+
+**Forums**:
+- Stack Overflow (Q&A)
+- Dev.to (articles)
+- Hacker News (discussions)
+- ProductHunt (trends)
+
+### 6. **Blogs & Content Creators** ✍️
+
+**By Specialization**:
+
+**Frontend**:
+- Dan Abramov (React deep dives)
+- Kent C. Dodds (Testing, React)
+- Sarah Drasner (Animation, Performance)
+
+**Backend**:
+- Martin Fowler (Architecture)
+- High Scalability blog
+- Backend Trending
+
+**DevOps**:
+- Linux Academy
+- Codefresh
+- DigitalOcean tutorials
+
+**AI/ML**:
+- Andrej Karpathy (Neural Networks)
+- Jeremy Howard (Practical AI)
+- Sebastian Raschka (ML)
+
+**Data**:
+- Fundamentals of Data Engineering
+- Apache Spark docs
+- dbt best practices
+
+### 7. **GitHub Resources** 🐙
+- Awesome lists (curated resources)
+- Sample projects
+- Open source to contribute to
+- Code examples
+
+### 8. **Conferences & Events** 🎤
+- JSConf (JavaScript)
+- ReactConf (React)
+- PyConf (Python)
+- KubeCon (Kubernetes)
+- Conference videos on YouTube
+
+## 🎓 Resource Quality Ratings
+
+⭐⭐⭐⭐⭐ = Essential, must use
+⭐⭐⭐⭐ = Highly recommended
+⭐⭐⭐ = Very good, helpful
+⭐⭐ = Good supplement
+⭐ = Beginner only
+
+## 💡 How to Use Resources Effectively
+
+### 1. **Start with Official Docs**
+   Always the source of truth, maintained by creators
+
+### 2. **Combine Learning Styles**
+   - Video courses for concepts
+   - Books for deep understanding
+   - Practice platforms for skills
+   - Projects for application
+
+### 3. **Don't Just Consume**
+   - Take notes
+   - Code along
+   - Build variations
+   - Teach others
+
+### 4. **Join Communities Early**
+   - Don't wait for expertise
    - Ask questions
-   - Help others
-   - Stay updated with trends
+   - Help beginners
+   - Stay updated
 
-5. **Track Your Progress**
+### 5. **Track Your Learning**
    - Mark completed courses
-   - Document projects built
-   - Share your learning journey
+   - Note insights
+   - Build portfolio projects
+   - Share progress
 
-## Pro Tips
+## 🚀 Sample Resource Output
 
-- Join communities EARLY, don't wait for expertise
-- Free resources are often as good as paid
-- Consistency > intensive cramming
-- Build portfolio projects
-- Document your learning
-- Contribute back to community
+**Example: `/find-resources frontend`**
+
+```
+📚 Official Documentation
+- react.dev ⭐⭐⭐⭐⭐ (React)
+- vuejs.org ⭐⭐⭐⭐⭐ (Vue)
+- angular.io ⭐⭐⭐⭐⭐ (Angular)
+- typescriptlang.org ⭐⭐⭐⭐⭐
+- developer.mozilla.org ⭐⭐⭐⭐⭐
+
+📺 Recommended Courses
+- Frontend Masters ⭐⭐⭐⭐⭐ ($39/month)
+- Egghead.io ⭐⭐⭐⭐ ($20/month)
+- Scrimba ⭐⭐⭐⭐ (Free + Pro)
+
+🎮 Practice Platforms
+- Frontend Mentor ⭐⭐⭐⭐⭐ (Real design projects)
+- LeetCode ⭐⭐⭐⭐ (Algorithms)
+- Codewars ⭐⭐⭐⭐
+
+📚 Essential Books
+- You Don't Know JS (Kyle Simpson) ⭐⭐⭐⭐⭐
+- Eloquent JavaScript ⭐⭐⭐⭐⭐
+- CSS Secrets ⭐⭐⭐⭐
+
+👥 Communities
+- Reactiflux Discord (30K+ devs)
+- r/webdev (50K+ members)
+- Dev.to (articles, discussions)
+
+✍️ Top Content Creators
+- Dan Abramov (React)
+- Kent C. Dodds (Testing)
+- Sarah Drasner (Performance)
+```
+
+## 📞 Integration
+
+After getting resources:
+- **Ask Agent**: Use `@frontend-developer` for guidance
+- **Take Course**: Pick one from recommended list
+- **Join Community**: Connect with others learning same path
+- **Practice**: Use interactive platforms
+- **Build**: Create portfolio projects
+
+---
+
+**Find everything you need to master your specialization!** 🎓

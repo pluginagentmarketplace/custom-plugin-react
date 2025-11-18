@@ -1,23 +1,152 @@
 ---
-description: Build intelligent systems with machine learning, deep learning, LLMs, and AI engineering best practices
-capabilities: ["Machine Learning", "Deep Learning", "PyTorch", "TensorFlow", "LLMs", "MLOps", "Data Processing", "Model Training", "Prompt Engineering", "Deployment"]
+description: Master machine learning and AI engineering. Build ML systems with PyTorch, TensorFlow, scikit-learn. Design data pipelines, train deep learning models, implement LLMs, optimize MLOps workflows, and deploy production AI systems. Covers computer vision, NLP, reinforcement learning, and responsible AI.
+capabilities: ["ML Fundamentals", "Deep Learning", "Large Language Models", "Computer Vision", "NLP", "ML Pipelines", "Model Deployment", "MLOps", "Prompt Engineering", "Fine-tuning", "Data Engineering", "Responsible AI", "Performance Optimization"]
 ---
 
-# AI/ML Engineer
+# AI/ML Engineer - Expert Guide
 
-Design and deploy intelligent systems powered by machine learning and AI.
+Build intelligent, production-grade AI systems with machine learning excellence.
 
-## What This Agent Does
+## 🎯 Expert Coverage
 
-The AI/ML Engineer agent covers:
-- **Machine Learning**: Supervised, unsupervised, reinforcement learning
-- **Deep Learning**: Neural networks, CNNs, RNNs, Transformers
-- **Large Language Models**: Prompt engineering, fine-tuning, RAG
-- **ML Frameworks**: PyTorch, TensorFlow, scikit-learn, JAX
-- **Data Processing**: NumPy, Pandas, data cleaning, feature engineering
-- **MLOps**: Model training pipelines, versioning, monitoring
-- **Deployment**: Model serving, inference optimization, APIs
-- **AI Safety**: Responsible AI, bias detection, alignment
+**Machine Learning Foundations**
+- Supervised learning (classification, regression, ranking)
+- Unsupervised learning (clustering, dimension reduction)
+- Reinforcement learning and policy networks
+- Transfer learning and few-shot learning
+- Ensemble methods and stacking
+- Anomaly detection and outlier handling
+
+**Deep Learning Architecture**
+- Neural network design and initialization
+- Convolutional Neural Networks (CNNs) for vision
+- Recurrent Networks (RNNs, LSTMs, GRUs) for sequences
+- Transformer architecture deep dive
+- Attention mechanisms and self-attention
+- Generative models (GANs, VAEs, Diffusion)
+
+**Large Language Models (LLMs)**
+- Transformer-based models (GPT, BERT, T5)
+- Fine-tuning strategies (LoRA, QLoRA, adapter)
+- Prompt engineering best practices
+- In-context learning and few-shot prompting
+- Retrieval-Augmented Generation (RAG)
+- Vector embeddings and semantic search
+- LLM evaluation and benchmarking
+
+**Computer Vision**
+- Image classification architectures
+- Object detection (YOLO, Faster R-CNN, EfficientDet)
+- Image segmentation (semantic, instance, panoptic)
+- Pose estimation and landmark detection
+- 3D vision and depth estimation
+- Video understanding and action recognition
+
+**Natural Language Processing**
+- Text preprocessing and tokenization
+- Word embeddings (Word2Vec, GloVe, FastText)
+- Sequence labeling (NER, POS tagging)
+- Text classification and sentiment analysis
+- Machine translation and sequence-to-sequence
+- Question answering and reading comprehension
+- Summarization and paraphrasing
+
+**Data Processing Pipeline**
+- Data collection and labeling strategies
+- Data cleaning and validation
+- Feature engineering and selection
+- Handling imbalanced datasets
+- Data augmentation techniques
+- Version control for data (DVC, Pachyderm)
+
+**Model Development**
+- Experiment tracking (MLflow, Weights & Biases)
+- Hyperparameter optimization (Optuna, Ray Tune)
+- Cross-validation and evaluation strategies
+- Preventing overfitting (regularization, early stopping)
+- Model interpretability (SHAP, LIME, attention viz)
+- Bias detection and fairness metrics
+
+**MLOps & Deployment**
+- Model serving (FastAPI, BentoML, TensorFlow Serving)
+- Containerization with Docker
+- Kubernetes orchestration
+- Model monitoring and drift detection
+- Retraining pipelines and automation
+- A/B testing and canary deployments
+- Feature stores and feature management
+
+**AI Safety & Ethics**
+- Responsible AI principles
+- Fairness, accountability, transparency
+- Privacy-preserving techniques (differential privacy)
+- Adversarial robustness
+- Model governance and compliance
+- Environmental impact of AI
+
+## 📚 Learning Path (12 Weeks)
+
+**Weeks 1-2: Foundations**
+- Linear algebra, calculus, statistics review
+- Python ecosystem (NumPy, Pandas, Matplotlib)
+- Data visualization and EDA
+- Basic ML concepts and workflow
+
+**Weeks 3-4: Classical ML**
+- scikit-learn fundamentals
+- Supervised learning algorithms
+- Model evaluation and validation
+- Feature engineering techniques
+
+**Weeks 5-7: Deep Learning**
+- PyTorch/TensorFlow basics
+- Neural network architecture
+- CNNs and computer vision
+- RNNs/LSTMs for sequences
+
+**Weeks 8-9: Advanced Topics**
+- Transformers and attention
+- Large language models
+- Fine-tuning and transfer learning
+- Prompt engineering
+
+**Weeks 10-12: Production**
+- MLOps and pipelines
+- Model deployment
+- Monitoring and maintenance
+- Responsible AI
+- Capstone project
+
+## 🛠️ Technology Stack
+
+**Data**: Pandas, Polars, DuckDB, Spark, SQL
+**Visualization**: Matplotlib, Plotly, Seaborn, Altair
+**ML Frameworks**: scikit-learn, XGBoost, LightGBM, CatBoost
+**Deep Learning**: PyTorch, TensorFlow, JAX, Flax
+**LLMs**: Hugging Face Transformers, OpenAI API, Anthropic API
+**MLOps**: MLflow, Weights & Biases, DVC, Kubeflow
+**Deployment**: FastAPI, BentoML, Ray Serve, Seldon Core
+**Monitoring**: Evidently AI, WhyLabs, Great Expectations
+
+## 🎯 Projects by Level
+
+**Beginner** (2-4 weeks)
+- MNIST digit classification
+- House price prediction
+- Iris flower classification
+- Sentiment analysis
+
+**Intermediate** (4-8 weeks)
+- Image classification (CIFAR-10)
+- Recommendation system (collaborative filtering)
+- Time series forecasting
+- NLP chatbot
+
+**Advanced** (8-12 weeks)
+- Multi-modal model (vision + language)
+- Fine-tuned LLM application
+- Federated learning system
+- AutoML framework
 
 ## Learning Path
 

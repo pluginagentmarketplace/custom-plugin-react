@@ -1,174 +1,323 @@
 ---
 name: backend-development
-description: Build APIs, work with databases, implement authentication, and design scalable backend systems. Use when developing server-side logic, handling data persistence, or designing system architectures.
+description: Master API design, database architecture, authentication, caching, microservices, and deployment. Build scalable, secure, performant backend systems.
 ---
 
-# Backend Development
+# Backend Development Skills
 
-## Quick Start
+## REST API Design
 
-### Node.js with Express:
-
+### Resource-Oriented Design
 ```javascript
-import express from 'express';
-import cors from 'cors';
+// Good: Resource-oriented endpoints
+GET /api/v1/users                    // List users
+POST /api/v1/users                   // Create user
+GET /api/v1/users/:id                // Get specific user
+PUT /api/v1/users/:id                // Update user
+DELETE /api/v1/users/:id             // Delete user
+GET /api/v1/users/:id/orders         // User's orders
+POST /api/v1/users/:id/orders        // Create order
 
-const app = express();
-app.use(cors());
-app.use(express.json());
-
-// Routes
-app.get('/api/users', (req, res) => {
-  res.json({ users: [] });
-});
-
-app.post('/api/users', (req, res) => {
-  const user = req.body;
-  // Save to database
-  res.status(201).json(user);
-});
-
-app.listen(3000, () => {
-  console.log('Server running on port 3000');
-});
+// Proper HTTP semantics
+POST   /api/users              // 201 Created
+GET    /api/users/:id          // 200 OK or 404 Not Found
+PUT    /api/users/:id          // 200 OK or 204 No Content
+DELETE /api/users/:id          // 204 No Content
 ```
 
-### Database query with SQL:
+### Error Handling
+```javascript
+const errorHandler = (err, req, res, next) => {
+  const status = err.status || 500;
+  const message = err.message || 'Internal Server Error';
+  
+  res.status(status).json({
+    error: {
+      status,
+      message,
+      timestamp: new Date().toISOString(),
+      path: req.path,
+      ...(process.env.NODE_ENV === 'development' && { stack: err.stack })
+    }
+  });
+};
+```
 
+## Database Optimization
+
+### Query Performance
 ```sql
--- Create table
-CREATE TABLE users (
-  id SERIAL PRIMARY KEY,
-  email VARCHAR(255) UNIQUE NOT NULL,
-  name VARCHAR(255),
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
--- Optimized query with index
+-- Proper indexing for common queries
 CREATE INDEX idx_users_email ON users(email);
+CREATE INDEX idx_orders_user_id_date ON orders(user_id, created_at DESC);
 
-SELECT id, email, name FROM users
-WHERE email = $1;
+-- Efficient query with EXPLAIN
+EXPLAIN ANALYZE
+SELECT u.*, COUNT(o.id) as order_count
+FROM users u
+LEFT JOIN orders o ON u.id = o.user_id
+WHERE u.created_at > NOW() - INTERVAL '30 days'
+GROUP BY u.id;
+
+-- Avoid N+1 queries
+-- Bad:
+users.forEach(u => {
+  const orders = query('SELECT * FROM orders WHERE user_id = ?', u.id);
+});
+
+-- Good:
+const users = query('SELECT * FROM users');
+const ordersByUser = query('SELECT user_id, * FROM orders WHERE user_id IN (?)', userIds);
 ```
 
-### JWT Authentication:
-
+### Connection Pooling
 ```javascript
-import jwt from 'jsonwebtoken';
+const pool = new Pool({
+  max: 20,
+  idleTimeoutMillis: 30000,
+  connectionTimeoutMillis: 2000,
+});
 
-const SECRET = process.env.JWT_SECRET;
-
-// Generate token
-const token = jwt.sign(
-  { userId: user.id, email: user.email },
-  SECRET,
-  { expiresIn: '7d' }
-);
-
-// Verify token
-const decoded = jwt.verify(token, SECRET);
+// Reuse connections
+const client = await pool.connect();
+try {
+  const result = await client.query('SELECT * FROM users');
+} finally {
+  client.release();
+}
 ```
 
-## Core Concepts
+## Authentication & Security
 
-**API Design**
-- REST principles and conventions
-- HTTP methods and status codes
-- Request/response serialization
-- API versioning strategies
-- Error handling and status codes
-
-**Database Design**
-- Normalization and schema design
-- Indexing strategies
-- Query optimization
-- Transactions and ACID properties
-- Connection pooling
-
-**Authentication & Authorization**
-- JWT (JSON Web Tokens)
-- OAuth 2.0 flows
-- Session management
-- Role-based access control (RBAC)
-- Encryption and hashing
-
-**Scalability**
-- Stateless design principles
-- Caching strategies (Redis)
-- Database replication and sharding
-- Load balancing
-- Microservices patterns
-
-## Best Practices
-
-1. **Code Organization**
-   - MVC or similar architectural pattern
-   - Separation of concerns
-   - Dependency injection
-   - Clear folder structure
-
-2. **Security**
-   - Input validation and sanitization
-   - SQL injection prevention
-   - CSRF protection
-   - Rate limiting
-   - HTTPS enforcement
-
-3. **Performance**
-   - Query optimization
-   - Proper indexing
-   - Connection pooling
-   - Caching layer (Redis, Memcached)
-   - Batch operations
-
-4. **Error Handling**
-   - Consistent error response format
-   - Proper HTTP status codes
-   - Logging and monitoring
-   - Graceful degradation
-
-## Common Patterns
-
-**Middleware pattern:**
+### JWT Implementation
 ```javascript
-const authenticate = (req, res, next) => {
-  const token = req.headers.authorization?.split(' ')[1];
-  if (!token) return res.status(401).json({ error: 'Unauthorized' });
+const jwt = require('jsonwebtoken');
 
-  try {
-    const decoded = jwt.verify(token, SECRET);
-    req.user = decoded;
-    next();
-  } catch (error) {
-    res.status(403).json({ error: 'Invalid token' });
-  }
+const generateToken = (user) => {
+  return jwt.sign(
+    { userId: user.id, email: user.email, role: user.role },
+    process.env.JWT_SECRET,
+    { expiresIn: '7d', issuer: 'app', audience: 'web' }
+  );
 };
 
-app.get('/api/protected', authenticate, (req, res) => {
-  res.json({ user: req.user });
+const verifyToken = (token) => {
+  try {
+    return jwt.verify(token, process.env.JWT_SECRET, {
+      issuer: 'app',
+      audience: 'web'
+    });
+  } catch (err) {
+    throw new AuthError('Invalid token');
+  }
+};
+```
+
+### Secure Password Handling
+```javascript
+const bcrypt = require('bcrypt');
+
+// Hash password
+const hashPassword = async (password) => {
+  const salt = await bcrypt.genSalt(12);
+  return bcrypt.hash(password, salt);
+};
+
+// Verify password
+const verifyPassword = async (password, hash) => {
+  return bcrypt.compare(password, hash);
+};
+
+// Never store plaintext, always use bcrypt
+```
+
+## Caching Strategies
+
+### Redis Cache Pattern
+```javascript
+const redis = require('redis');
+const client = redis.createClient();
+
+async function getUserWithCache(userId) {
+  // Try cache first
+  const cached = await client.get(`user:${userId}`);
+  if (cached) return JSON.parse(cached);
+
+  // Cache miss, fetch from DB
+  const user = await db.query('SELECT * FROM users WHERE id = ?', userId);
+  
+  // Cache for 1 hour
+  await client.setEx(`user:${userId}`, 3600, JSON.stringify(user));
+  return user;
+}
+
+// Cache invalidation on update
+async function updateUser(userId, data) {
+  await db.query('UPDATE users SET ? WHERE id = ?', data, userId);
+  await client.del(`user:${userId}`);
+}
+```
+
+### Cache-Aside Pattern
+```javascript
+async function getDataWithFallback(key, fetchFn, ttl = 3600) {
+  try {
+    // Try cache
+    const cached = await cache.get(key);
+    if (cached) return JSON.parse(cached);
+  } catch (err) {
+    console.error('Cache error:', err);
+  }
+
+  // Fetch from source
+  const data = await fetchFn();
+  
+  // Update cache
+  try {
+    await cache.setEx(key, ttl, JSON.stringify(data));
+  } catch (err) {
+    console.error('Cache write error:', err);
+  }
+
+  return data;
+}
+```
+
+## Microservices Patterns
+
+### Service Discovery
+```javascript
+// Register service
+const consul = require('consul');
+const consulClient = new consul();
+
+await consulClient.agent.service.register({
+  id: 'user-service-1',
+  name: 'user-service',
+  address: 'localhost',
+  port: 3000,
+  check: {
+    http: 'http://localhost:3000/health',
+    interval: '10s',
+    timeout: '5s'
+  }
+});
+
+// Discover service
+const services = await consulClient.health.service({
+  service: 'user-service',
+  passing: true
 });
 ```
 
-**Repository pattern:**
+### Circuit Breaker Pattern
 ```javascript
-class UserRepository {
-  async findById(id) {
-    return db.query('SELECT * FROM users WHERE id = $1', [id]);
+class CircuitBreaker {
+  constructor(fn, opts = {}) {
+    this.fn = fn;
+    this.failures = 0;
+    this.threshold = opts.threshold || 5;
+    this.timeout = opts.timeout || 60000;
+    this.state = 'CLOSED';
   }
 
-  async create(userData) {
-    return db.query(
-      'INSERT INTO users (email, name) VALUES ($1, $2) RETURNING *',
-      [userData.email, userData.name]
-    );
+  async execute(...args) {
+    if (this.state === 'OPEN') {
+      if (Date.now() - this.lastFailTime > this.timeout) {
+        this.state = 'HALF_OPEN';
+      } else {
+        throw new Error('Circuit breaker is OPEN');
+      }
+    }
+
+    try {
+      const result = await this.fn(...args);
+      this.onSuccess();
+      return result;
+    } catch (err) {
+      this.onFailure();
+      throw err;
+    }
+  }
+
+  onSuccess() {
+    this.failures = 0;
+    this.state = 'CLOSED';
+  }
+
+  onFailure() {
+    this.failures++;
+    this.lastFailTime = Date.now();
+    if (this.failures >= this.threshold) {
+      this.state = 'OPEN';
+    }
   }
 }
 ```
 
-## Resources
+## API Rate Limiting
 
-- **Node.js**: nodejs.org/docs
-- **Express**: expressjs.com
-- **Databases**: postgresql.org, mongodb.com
-- **Testing**: jest.io, supertest
-- **APIs**: restfulapi.net, swagger.io
+### Token Bucket Algorithm
+```javascript
+class RateLimiter {
+  constructor(capacity, refillRate) {
+    this.capacity = capacity;
+    this.tokens = capacity;
+    this.refillRate = refillRate;
+    this.lastRefillTime = Date.now();
+  }
+
+  allowRequest() {
+    this.refill();
+    if (this.tokens >= 1) {
+      this.tokens--;
+      return true;
+    }
+    return false;
+  }
+
+  refill() {
+    const now = Date.now();
+    const timePassed = (now - this.lastRefillTime) / 1000;
+    const tokensToAdd = timePassed * this.refillRate;
+    this.tokens = Math.min(this.capacity, this.tokens + tokensToAdd);
+    this.lastRefillTime = now;
+  }
+}
+```
+
+## Monitoring & Logging
+
+### Structured Logging
+```javascript
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  format: winston.format.json(),
+  transports: [
+    new winston.transports.File({ filename: 'error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'combined.log' })
+  ]
+});
+
+logger.info('User login', {
+  userId: 123,
+  timestamp: new Date(),
+  ip: req.ip,
+  userAgent: req.get('user-agent')
+});
+```
+
+### Health Checks
+```javascript
+app.get('/health', (req, res) => {
+  res.json({
+    status: 'ok',
+    timestamp: new Date(),
+    uptime: process.uptime(),
+    database: await checkDatabase(),
+    cache: await checkCache()
+  });
+});
+```
+

@@ -1,11 +1,11 @@
 ---
-description: Master infrastructure automation, containerization, orchestration, and cloud deployment with Docker, Kubernetes, AWS, Terraform
-capabilities: ["Docker", "Kubernetes", "Terraform", "AWS", "CI/CD", "Infrastructure as Code", "Monitoring", "Logging", "Networking", "Security"]
+description: Expert guide for DevOps and infrastructure engineering. Master containerization (Docker), orchestration (Kubernetes), Infrastructure as Code (Terraform, CloudFormation), CI/CD pipelines, cloud platforms (AWS, GCP, Azure), monitoring (Prometheus, Grafana), and security practices. Build and maintain scalable, reliable, secure infrastructure.
+capabilities: ["Docker & Containers", "Kubernetes Orchestration", "Infrastructure as Code", "CI/CD Pipeline Design", "Cloud Architecture", "Monitoring & Observability", "Security & Compliance", "Disaster Recovery", "Network Engineering", "Database Administration", "Cost Optimization", "Incident Response"]
 ---
 
-# DevOps Engineer
+# DevOps Engineer - Expert Guide
 
-Automate, deploy, and manage infrastructure at scale.
+Design, deploy, and maintain scalable, secure, reliable infrastructure at enterprise scale.
 
 ## What This Agent Does
 

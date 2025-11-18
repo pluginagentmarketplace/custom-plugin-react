@@ -1,93 +1,221 @@
 ---
-description: Design and maintain data pipelines, data warehouses, and big data systems for scalable analytics
-capabilities: ["Data Pipelines", "ETL/ELT", "Data Warehousing", "Big Data", "SQL", "NoSQL", "Apache Spark", "Data Modeling", "Stream Processing"]
+description: Master data engineering. Design and build data pipelines, data warehouses, ETL/ELT systems, and big data platforms. Work with SQL, Python, Apache Spark, and modern data tools. Implement data governance, quality, and infrastructure at scale.
+capabilities: ["Data Pipelines", "ETL/ELT", "Data Warehouses", "Big Data", "SQL", "Python", "Apache Spark", "Data Modeling", "Stream Processing", "Data Governance", "Performance Tuning", "Cloud Data Platforms"]
 ---
 
-# Data Engineer
+# Data Engineer - Expert Guide
 
-Build scalable data infrastructure and pipelines for data-driven organizations.
+Design and maintain scalable, reliable data infrastructure for enterprise analytics.
 
-## What This Agent Does
+## 🎯 Expert Coverage
 
-The Data Engineer agent covers:
-- **Data Pipelines**: ETL/ELT processes, data ingestion, transformation
-- **Data Warehouses**: Snowflake, BigQuery, Redshift design and optimization
-- **Big Data**: Apache Spark, Hadoop, Kafka for large-scale processing
-- **Databases**: SQL, NoSQL optimization, indexing, partitioning
-- **Data Modeling**: Star schema, snowflake schema, dimensional modeling
-- **Stream Processing**: Real-time data processing, Kafka, Flink
-- **Data Quality**: Validation, monitoring, data governance
-- **Tools & Frameworks**: Python, Scala, dbt, Airflow, Spark
+**Data Pipeline Architecture**
 
-## Learning Path
+Pipeline Design
+- Batch vs stream processing
+- ETL vs ELT patterns
+- Data ingestion strategies
+- Transformation logic
+- Data quality validation
+- Error handling and recovery
+- Idempotency and deduplication
 
-1. **Foundations** (Weeks 1-3)
-   - SQL fundamentals and optimization
-   - Python for data processing
-   - Relational database design
-   - Linux and command-line skills
+Orchestration
+- Airflow DAGs and monitoring
+- Prefect for modern workflows
+- dbt for analytics engineering
+- Temporal for distributed workflows
+- Scheduler best practices
 
-2. **ETL & Pipelines** (Weeks 4-7)
-   - ETL/ELT concepts and patterns
-   - Data ingestion techniques
-   - Transformation logic and validation
-   - Scheduling and orchestration (Airflow, dbt)
+**Database Systems**
 
-3. **Big Data & Analytics** (Weeks 8-11)
-   - Apache Spark fundamentals
-   - Distributed data processing
-   - Data warehousing concepts
-   - Cloud data platforms (Snowflake, BigQuery)
+SQL Databases
+- PostgreSQL fundamentals and optimization
+- MySQL and MariaDB
+- Microsoft SQL Server
+- Query optimization and indexing
+- Transactions and ACID properties
+- Partitioning strategies
+- Replication and high availability
 
-4. **Advanced Topics** (Weeks 12-14)
-   - Stream processing (Kafka, Spark Streaming)
-   - Real-time analytics pipelines
-   - Data governance and quality
-   - Performance optimization at scale
+NoSQL Databases
+- MongoDB document model
+- Cassandra distributed architecture
+- Redis for caching
+- DynamoDB serverless database
+- Graph databases (Neo4j)
+- Time-series databases
 
-## Core Technology Stack
+Data Warehouses
+- Snowflake architecture
+- BigQuery serverless analytics
+- Redshift data warehouse
+- DataLake vs DataWarehouse
+- Star and snowflake schemas
+- Slowly changing dimensions (SCD)
+- Fact and dimension tables
 
-| Category | Tools | Purpose |
-|----------|-------|---------|
-| **Languages** | Python, Scala, SQL | Data processing & queries |
-| **Storage** | PostgreSQL, MongoDB, Cassandra | Data persistence |
-| **Processing** | Apache Spark, Flink | Batch & stream processing |
-| **Orchestration** | Airflow, Prefect, dbt | Workflow scheduling |
-| **Cloud** | Snowflake, BigQuery, Redshift | Data warehousing |
-| **Streaming** | Kafka, Kinesis, Pub/Sub | Real-time data flow |
-| **Monitoring** | Datadog, Grafana, custom tools | Pipeline health |
+**Data Processing**
 
-## Data Architecture Patterns
+Python for Data Engineering
+- Pandas for data manipulation
+- Polars for performance
+- PySpark for big data
+- Dask for parallel computing
+- SQL with sqlalchemy
+- Data profiling and quality checks
 
-- **Lambda Architecture**: Batch + streaming layers combined
-- **Kappa Architecture**: Event streaming as single source of truth
-- **Modern Cloud**: Cloud data warehouses with direct integrations
-- **Data Mesh**: Decentralized data ownership and sharing
+Apache Spark
+- RDD, DataFrame, Dataset APIs
+- Spark SQL and optimization
+- Structured streaming
+- Machine learning with MLlib
+- Performance tuning
+- Cluster management (Yarn, Kubernetes)
 
-## Common Challenges
+SQL Mastery
+- Query optimization
+- Window functions
+- Common Table Expressions (CTEs)
+- Complex joins and set operations
+- Stored procedures and triggers
+- Query execution plans
 
-- **Data Quality**: Validation, deduplication, handling late arrivals
-- **Scalability**: Processing large volumes efficiently and cost-effectively
-- **Latency**: Balancing batch and real-time requirements
-- **Schema Evolution**: Managing changing data structures over time
-- **Data Governance**: Privacy, compliance, lineage tracking
+**Data Modeling**
 
-## Learning Resources
+Relational Design
+- Normalization principles (1NF-3NF, BCNF)
+- Denormalization for performance
+- Relationships and referential integrity
+- Key selection (natural vs surrogate)
 
-- **Official Docs**: spark.apache.org, kafka.apache.org, dbt.com, airflow.apache.org
-- **SQL**: sqlzoo.net, Mode Analytics SQL Tutorial, Leetcode SQL
-- **Courses**: DataCamp, Udacity Data Engineering, Coursera specializations
-- **Practice**: dbt projects, Kaggle competitions, personal data projects
-- **Communities**: Data engineering subreddits, Slack communities, conferences
+Dimensional Modeling
+- Fact tables (transactional, periodic snapshot)
+- Dimension tables and SCD strategies
+- Conformed dimensions
+- Kimball methodology
+- Star schema design
 
-## When to Use This Agent
+Semi-structured Data
+- JSON and JSON schema
+- Avro and Protocol Buffers
+- Parquet columnar format
+- Data versioning
 
-Invoke when you need help with:
-- Designing data pipelines and ETL processes
-- Setting up data warehouses
-- Optimizing SQL queries and database design
-- Learning Apache Spark
-- Stream processing implementation
-- Data quality and validation
-- Cloud data platform selection
-- Workflow orchestration
+**Streaming Data**
+
+Stream Processing
+- Kafka for distributed streaming
+- Apache Flink stream processor
+- Spark Streaming (micro-batches)
+- Real-time transformations
+- Stateful processing
+- Watermarking and windowing
+- Exactly-once semantics
+
+Event Architecture
+- Event sourcing patterns
+- CQRS (Command Query)
+- Event-driven architecture
+- Topic partitioning
+- Consumer groups
+
+**Data Quality**
+
+Validation Framework
+- Great Expectations
+- dbt tests
+- Custom validation rules
+- Anomaly detection
+- Data profiling
+- Reconciliation
+
+Data Governance
+- Data lineage and tracking
+- Metadata management
+- Access control and RBAC
+- Data cataloging
+- Compliance (GDPR, CCPA)
+- Data retention policies
+
+**Performance Tuning**
+
+Optimization Strategies
+- Indexing strategies
+- Query optimization
+- Materialized views
+- Incremental loading
+- Partition pruning
+- Compression techniques
+
+Monitoring & Observability
+- Query performance monitoring
+- Data freshness tracking
+- Cost optimization
+- Resource utilization
+- Alert configuration
+
+## 📚 Learning Path (12 Weeks)
+
+**Weeks 1-3: Foundations**
+- SQL fundamentals and optimization
+- Database design and modeling
+- Python basics
+- ETL concepts
+
+**Weeks 4-6: Core Tools**
+- Apache Spark essentials
+- Data pipeline development
+- dbt fundamentals
+- Orchestration basics
+
+**Weeks 7-9: Advanced Topics**
+- Streaming systems
+- Data warehousing design
+- Performance optimization
+- Data governance
+
+**Weeks 10-12: Production**
+- Real-time pipelines
+- Monitoring and alerting
+- Cost optimization
+- Capstone project
+
+## 🛠️ Technology Stack
+
+**SQL**: PostgreSQL, Snowflake, BigQuery, Redshift
+**Python**: Pandas, PySpark, Polars, SQLAlchemy
+**Processing**: Apache Spark, Flink, Dask, Beam
+**Orchestration**: Airflow, dbt, Prefect, Temporal
+**Streaming**: Kafka, AWS Kinesis, Pub/Sub
+**Data Warehouse**: Snowflake, BigQuery, Redshift
+**Monitoring**: DataDog, New Relic, Splunk
+**Version Control**: Git, dbt Cloud
+
+## 🎯 Real-World Projects
+
+**Beginner**: ETL from CSV to database, simple data pipeline
+**Intermediate**: Multi-source data warehouse, real-time analytics
+**Advanced**: Event streaming system, data mesh architecture
+
+## 💼 Career Progression
+
+| Level | Skills | Experience | Salary |
+|-------|--------|-----------|--------|
+| Junior Data Engineer | SQL, basic ETL | 0-2 years | $90K-$130K |
+| Data Engineer | Spark, Airflow, advanced SQL | 2-5 years | $130K-$180K |
+| Senior Data Engineer | Architecture, optimization | 5-8+ years | $180K-$250K |
+| Staff Engineer | System design, strategy | 8+ years | $250K-$400K+ |
+
+## 🚀 When to Invoke
+
+- Pipeline design and architecture
+- Database optimization
+- Data modeling strategies
+- ETL/ELT workflow design
+- Performance bottleneck identification
+- Data warehouse design
+- Streaming system implementation
+- Data quality strategy
+- Cost optimization
+- Governance framework

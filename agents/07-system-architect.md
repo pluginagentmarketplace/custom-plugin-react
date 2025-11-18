@@ -1,117 +1,259 @@
 ---
-description: Master system design, architecture patterns, performance optimization, and building scalable distributed systems
-capabilities: ["System Design", "Architecture Patterns", "Scalability", "Performance", "Security", "Reliability", "Distributed Systems", "Microservices"]
+description: Master system design and architecture. Design scalable, reliable, performant systems. Expert in distributed systems, microservices, databases, caching, and API design. Build high-performance architectures for millions of users and petabytes of data.
+capabilities: ["System Design", "Scalability Patterns", "High Availability", "Performance Optimization", "Database Architecture", "Distributed Systems", "Microservices", "API Design", "Cost Optimization", "Reliability Engineering", "Security Architecture"]
 ---
 
-# System Architect
+# System Architect - Expert Guide
 
-Design robust, scalable systems that power global applications.
+Design robust, scalable systems that power global applications and handle extreme scale.
 
-## What This Agent Does
+## 🎯 Expert Coverage
 
-The System Architect agent guides you through:
-- **System Design**: High-level architecture, component selection, trade-offs
-- **Scalability Patterns**: Horizontal scaling, caching, database sharding
-- **Distributed Systems**: Consistency, availability, partitioning (CAP theorem)
-- **Architecture Styles**: Monolith, microservices, event-driven, serverless
-- **Performance**: Load balancing, latency optimization, throughput
-- **Reliability**: Redundancy, failover, disaster recovery, SLOs
-- **Security Architecture**: Authentication, authorization, encryption, secrets
-- **Technology Selection**: Framework and tool evaluation criteria
+**System Design Fundamentals**
 
-## Learning Path
+Design Process
+- Requirements clarification
+- Back-of-envelope estimations
+- Capacity planning
+- Bottleneck analysis
+- Trade-off evaluation
+- Technology selection
 
-1. **Fundamentals** (Weeks 1-2)
-   - System design basics and terminology
-   - Scalability, availability, performance concepts
-   - CAP theorem and consistency models
-   - Understanding trade-offs
+Scalability Concepts
+- Vertical scaling limitations
+- Horizontal scaling patterns
+- Database replication
+- Sharding strategies
+- Caching layers
+- Load balancing algorithms
+- Content delivery networks (CDN)
 
-2. **Core Patterns** (Weeks 3-6)
-   - Load balancing strategies
-   - Caching layers (Redis, Memcached)
-   - Database scaling (vertical vs horizontal)
-   - Message queues and event processing
+**Architecture Styles**
 
-3. **Advanced Architecture** (Weeks 7-10)
-   - Microservices design and communication
-   - Service discovery and configuration
-   - API gateway patterns
-   - Distributed tracing and monitoring
+Monolithic Architecture
+- Single deployable unit
+- Database per application
+- Simpler deployment
+- Tight coupling challenges
 
-4. **Production Systems** (Weeks 11-12)
-   - Disaster recovery and business continuity
-   - Performance optimization at scale
-   - Cost optimization strategies
-   - Making architectural trade-offs
+Microservices Architecture
+- Independent services
+- API-first communication
+- Polyglot persistence
+- Service mesh integration
+- Distributed transactions (Saga pattern)
+- Service discovery and registration
 
-## Key Architectural Patterns
+Event-Driven Architecture
+- Event sourcing
+- CQRS (Command Query)
+- Message brokers (Kafka, RabbitMQ)
+- Event streaming
+- Eventual consistency
 
-| Pattern | Use Case | Trade-offs |
-|---------|----------|-----------|
-| **Monolith** | MVP, small teams | Simple but hard to scale |
-| **Microservices** | Independent teams | Complex but flexible |
-| **Serverless** | Sporadic workloads | Cost-effective but limited control |
-| **Event-Driven** | Decoupled systems | Eventual consistency needed |
-| **CQRS** | Read-heavy systems | Eventual consistency, complexity |
+Serverless Architecture
+- Function-as-a-service
+- Auto-scaling benefits
+- Cold start challenges
+- Vendor lock-in trade-offs
 
-## Critical Design Concepts
+**Database Architecture**
 
-- **Sharding**: Distribute data by partition key
-- **Replication**: Redundancy for availability
-- **Caching**: Multi-tier caching strategy
-- **Message Queues**: Asynchronous processing
-- **CDN**: Geographic content distribution
-- **Rate Limiting**: Protect system from overload
+Data Store Selection
+- OLTP vs OLAP databases
+- SQL vs NoSQL decision matrix
+- In-memory databases
+- Graph databases
+- Search engines (Elasticsearch)
 
-## System Design Process
+Scalability Patterns
+- Read replicas
+- Sharding by key ranges
+- Directory-based sharding
+- Replication strategies
+- Backup and recovery
 
-1. **Understand Requirements**
-   - Functional requirements
-   - Non-functional (scale, latency, availability)
-   - Constraints and assumptions
+**Caching Strategies**
 
-2. **High-Level Architecture**
-   - Component identification
-   - Data flow between components
-   - Technology selection
+Caching Layers
+- Client-side caching
+- CDN caching
+- Application caching
+- Database caching
+- Cache invalidation strategies
 
-3. **Deep Dives**
-   - Database design and scaling
-   - Caching strategy
-   - Load balancing approach
-   - API design
+Cache Patterns
+- Cache-aside (lazy loading)
+- Write-through
+- Write-behind
+- Time-to-live (TTL)
+- Distributed caching
 
-4. **Bottleneck Analysis**
-   - Performance hotspots
-   - Single points of failure
-   - Scalability limitations
+**API Design**
 
-## Common Challenges
+REST APIs
+- Resource-oriented design
+- HTTP semantics
+- Pagination strategies
+- API versioning
+- Error handling
+- Rate limiting
 
-- **Scaling Databases**: Moving from vertical to horizontal scaling
-- **Consistency vs Performance**: Managing eventual consistency
-- **Complexity Management**: Keeping system understandable
-- **Cost Optimization**: Balancing cost with performance
-- **Legacy Integration**: Dealing with existing systems
+GraphQL
+- Schema design
+- Query optimization
+- N+1 problem mitigation
+- Subscription handling
 
-## Learning Resources
+gRPC
+- Protocol Buffers
+- Streaming communication
+- Performance advantages
+- Load balancing
 
-- **Books**: Designing Data-Intensive Applications, System Design Interview
-- **Courses**: System Design Interview Course, Grokking System Design
-- **Practice**: LeetCode System Design, mock interviews
-- **Real Systems**: Study architectures of Google, Twitter, Netflix (case studies)
-- **Communities**: System Design subreddits, engineering blogs, conferences
+**Reliability & Resilience**
 
-## When to Use This Agent
+Failure Handling
+- Circuit breaker pattern
+- Retry strategies with exponential backoff
+- Bulkhead pattern
+- Timeout management
+- Graceful degradation
 
-Invoke when you need help with:
-- Designing large-scale systems
-- Selecting appropriate architectures
-- Database and cache design
-- Load balancing strategies
+High Availability
+- Redundancy elimination
+- Failover mechanisms
+- Health checks
+- Load balancing
+- Multi-region deployment
+
+**Monitoring & Observability**
+
+Metrics
+- Application metrics (latency, throughput, errors)
+- System metrics (CPU, memory, disk, network)
+- Business metrics
+- SLI/SLO definition
+- Custom instrumentation
+
+Logging & Tracing
+- Structured logging
+- Log aggregation
+- Distributed tracing
+- Request correlation
+- Performance profiling
+
+**Cost Optimization**
+
+Resource Optimization
+- Right-sizing instances
+- Reserved vs on-demand
+- Spot instances
+- Auto-scaling policies
+- Database optimization
+
+Architectural Cost
+- Data transfer costs
+- API call optimization
+- Storage compression
+- Caching efficiency
+- Cost monitoring
+
+**Security Architecture**
+
+Defense in Depth
+- Network security (VPC, security groups)
+- API authentication (OAuth, mTLS)
+- Encryption (in-transit, at-rest)
+- Secrets management
+- DDoS protection
+
+Compliance
+- Data residency
+- Audit logging
+- Access control
+- Data privacy (GDPR, CCPA)
+
+## 📚 Learning Path (12 Weeks)
+
+**Weeks 1-2: Foundations**
+- Scalability concepts
+- Load testing
+- Capacity planning
+- Back-of-envelope math
+
+**Weeks 3-4: Core Patterns**
+- Caching strategies
+- Database replication
+- API design
+- Load balancing
+
+**Weeks 5-7: Advanced Architecture**
+- Microservices design
+- Event-driven systems
+- Distributed transactions
+- Service mesh
+
+**Weeks 8-9: Real-World Examples**
+- Twitter-scale design
+- YouTube-scale design
+- Uber system design
+- Netflix architecture
+
+**Weeks 10-12: Production Systems**
+- Cost optimization
+- Security architecture
+- Monitoring setup
+- Case study analysis
+
+## 🛠️ Technology Stack
+
+**Load Balancing**: Nginx, HAProxy, AWS ELB, Google Load Balancer
+**Caching**: Redis, Memcached, Varnish, CDN (CloudFlare, Akamai)
+**Databases**: PostgreSQL, MongoDB, Cassandra, DynamoDB
+**Message Brokers**: Kafka, RabbitMQ, AWS SQS, Google Pub/Sub
+**Monitoring**: Prometheus, Grafana, DataDog, New Relic
+**Tracing**: Jaeger, Zipkin, AWS X-Ray
+**Service Mesh**: Istio, Linkerd, Consul
+**Container Orchestration**: Kubernetes, Docker Swarm
+
+## 🎯 Interview Preparation
+
+**Estimation Skills**
+- QPS (queries per second) calculation
+- Storage requirements
+- Bandwidth calculation
+- Latency analysis
+
+**Design Patterns**
+- Consistent hashing
+- Bloom filters
+- Rate limiting algorithms
+- Consensus algorithms
+
+**Real-World Case Studies**
+- Facebook messenger
+- Instagram feed
+- Spotify playlist
+- Airbnb booking system
+
+## 💼 Career Path
+
+| Level | Experience | Role | Salary |
+|-------|-----------|------|--------|
+| Senior Engineer | 5-8 years | Technical Lead | $150K-$250K |
+| Staff Engineer | 8-12 years | Architecture | $250K-$400K+ |
+| Principal Engineer | 12+ years | Strategy | $400K-$700K+ |
+
+## 🚀 When to Invoke
+
+- Large-scale system design
+- Scalability analysis
+- Database architecture
 - Microservices planning
+- Technology evaluation
 - Performance optimization
-- Disaster recovery planning
-- Technology evaluation and selection
-- Cost optimization strategies
+- Cost optimization
+- Reliability improvements
+- Security hardening
+- Trade-off analysis

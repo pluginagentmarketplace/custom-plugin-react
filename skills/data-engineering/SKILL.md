@@ -1,219 +1,101 @@
 ---
 name: data-engineering
-description: Design and build data pipelines, data warehouses, ETL processes, and big data systems. Work with SQL, Spark, and modern data tools. Use when building data infrastructure or optimizing data workflows.
+description: SQL, Python, Spark, data pipelines, warehouses, ETL/ELT, data quality, governance.
 ---
 
-# Data Engineering
+# Data Engineering Skills
 
-## Quick Start
-
-### SQL data pipeline:
+## SQL Optimization
 
 ```sql
--- Create staging table
-CREATE TABLE users_staging (
-    id SERIAL PRIMARY KEY,
-    email VARCHAR(255),
-    name VARCHAR(255),
-    created_at TIMESTAMP
-);
+-- Efficient query with proper indexing
+CREATE INDEX idx_orders_date_user ON orders(order_date DESC, user_id);
 
--- Transform and load
-INSERT INTO users_prod
-SELECT
-    id,
-    LOWER(TRIM(email)) as email,
-    UPPER(name) as name,
-    created_at,
-    CURRENT_TIMESTAMP as loaded_at
-FROM users_staging
-WHERE email IS NOT NULL
-    AND created_at > CURRENT_DATE - INTERVAL '1 day'
-ON CONFLICT (email) DO UPDATE SET
-    updated_at = CURRENT_TIMESTAMP;
+-- Window functions for analytics
+SELECT 
+    user_id,
+    order_date,
+    amount,
+    SUM(amount) OVER (PARTITION BY user_id ORDER BY order_date) as cumulative_amount,
+    ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY order_date DESC) as recency_rank
+FROM orders;
 
--- Clean up
-TRUNCATE TABLE users_staging;
-
--- Add index for performance
-CREATE INDEX IF NOT EXISTS idx_users_email ON users_prod(email);
+-- CTE for readability
+WITH monthly_revenue AS (
+    SELECT 
+        DATE_TRUNC('month', order_date) as month,
+        SUM(amount) as revenue
+    FROM orders
+    GROUP BY DATE_TRUNC('month', order_date)
+)
+SELECT month, revenue, LAG(revenue) OVER (ORDER BY month) as prev_month_revenue
+FROM monthly_revenue;
 ```
 
-### Apache Spark with Python:
+## Apache Spark ETL
 
 ```python
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, sum, count, when
+from pyspark.sql.functions import *
 
-spark = SparkSession.builder.appName("DataPipeline").getOrCreate()
+spark = SparkSession.builder.appName("ETL").getOrCreate()
 
 # Read data
-df = spark.read.csv("sales_data.csv", header=True, inferSchema=True)
+df_raw = spark.read.parquet("s3://bucket/raw-data/")
 
 # Transform
-sales_summary = df.filter(col("status") == "completed") \
-    .groupBy("region", "product") \
-    .agg(
-        sum("amount").alias("total_sales"),
-        count("*").alias("transaction_count"),
-        sum(when(col("profit") > 0, 1).otherwise(0)).alias("profitable_transactions")
-    ) \
-    .filter(col("total_sales") > 1000) \
-    .orderBy(col("total_sales").desc())
+df_clean = (df_raw
+    .filter(col("status") == "active")
+    .withColumn("revenue", col("price") * col("quantity"))
+    .withColumn("processed_date", current_timestamp())
+)
 
-# Write results
-sales_summary.write.mode("overwrite").parquet("output/sales_summary")
+# Aggregate
+df_summary = (df_clean
+    .groupBy("product_id", "region")
+    .agg(
+        sum("revenue").alias("total_revenue"),
+        count("*").alias("transaction_count"),
+        avg("quantity").alias("avg_quantity")
+    )
+    .filter(col("total_revenue") > 1000)
+)
+
+# Write
+df_summary.write.mode("overwrite").parquet("s3://bucket/summary/")
 ```
 
-### dbt data transformation:
+## dbt for Data Transformation
 
 ```sql
 -- models/staging/stg_users.sql
 {{ config(materialized='table') }}
 
 SELECT
-    id,
+    user_id,
     email,
     name,
+    LOWER(TRIM(email)) as normalized_email,
     created_at,
     CURRENT_TIMESTAMP as dbt_loaded_at
 FROM {{ source('raw', 'users') }}
 WHERE created_at IS NOT NULL
+
+-- models/marts/fct_orders.sql
+{{ config(materialized='table') }}
+
+SELECT
+    o.order_id,
+    o.user_id,
+    u.email,
+    o.order_date,
+    o.amount,
+    CASE 
+        WHEN o.amount > 1000 THEN 'high'
+        WHEN o.amount > 100 THEN 'medium'
+        ELSE 'low'
+    END as amount_category
+FROM {{ ref('stg_orders') }} o
+LEFT JOIN {{ ref('stg_users') }} u ON o.user_id = u.user_id
 ```
 
-### Data validation with Great Expectations:
-
-```python
-import great_expectations as ge
-
-# Load data
-df = ge.read_csv("data.csv")
-
-# Define expectations
-df.expect_column_to_exist("email")
-df.expect_column_values_to_not_be_null("email")
-df.expect_column_values_to_match_regex("email", r".*@.*\.com")
-df.expect_column_values_to_be_between("age", 0, 150)
-
-# Validate
-results = df.validate()
-print(results)
-```
-
-## Core Concepts
-
-**Data Pipeline Architecture**
-- Source → Staging → Warehouse → Analytics
-- Batch processing vs stream processing
-- Data lineage and dependencies
-- Error handling and retries
-- Scheduling and orchestration
-
-**Database Optimization**
-- Indexing strategies and cardinality
-- Query optimization and execution plans
-- Partitioning and sharding
-- Denormalization for performance
-- Data type selection
-
-**ETL/ELT Patterns**
-- Extract: APIs, databases, logs, files
-- Transform: Cleaning, validation, aggregation
-- Load: Batch or incremental loading
-- Idempotency and deduplication
-- SCD (Slowly Changing Dimensions)
-
-**Big Data Processing**
-- Apache Spark architecture (Driver, Executors)
-- Distributed processing and partitioning
-- RDDs, DataFrames, Datasets
-- Wide vs narrow transformations
-- Caching and optimization
-
-**Data Quality**
-- Validation rules and constraints
-- Anomaly detection
-- Data profiling
-- Monitoring and alerting
-- SLAs for data
-
-## Best Practices
-
-1. **Pipeline Design**
-   - Keep pipelines idempotent
-   - Separate transformation logic
-   - Use version control for all code
-   - Document assumptions
-   - Plan for scalability
-
-2. **Performance**
-   - Index appropriately
-   - Monitor query execution
-   - Use columnar formats (Parquet)
-   - Partition data strategically
-   - Cache intermediate results
-
-3. **Reliability**
-   - Implement data validation
-   - Handle failures gracefully
-   - Monitor pipeline execution
-   - Set up alerting
-   - Test recovery procedures
-
-4. **Security**
-   - Encrypt sensitive data
-   - Control access with IAM
-   - Audit data access
-   - Secure credentials
-   - Regular backups
-
-## Common Patterns
-
-**Incremental load pattern:**
-```sql
--- Track last load timestamp
-CREATE TABLE IF NOT EXISTS pipeline_metadata (
-    table_name VARCHAR(255),
-    last_load_timestamp TIMESTAMP
-);
-
--- Load new data since last run
-INSERT INTO fact_table
-SELECT * FROM source_table
-WHERE updated_at > (
-    SELECT COALESCE(last_load_timestamp, '1970-01-01')
-    FROM pipeline_metadata
-    WHERE table_name = 'fact_table'
-);
-
--- Update metadata
-UPDATE pipeline_metadata
-SET last_load_timestamp = CURRENT_TIMESTAMP
-WHERE table_name = 'fact_table';
-```
-
-**Data quality checks:**
-```python
-def validate_data(df):
-    checks = {
-        'null_count': df.isnull().sum(),
-        'unique_count': df.nunique(),
-        'value_range': {
-            'age': (df['age'].min(), df['age'].max()),
-        }
-    }
-    return checks
-
-# Assertions
-assert checks['null_count']['email'] == 0, "Email has nulls"
-assert checks['unique_count']['id'] == len(df), "Duplicate IDs"
-```
-
-## Resources
-
-- **SQL**: sqlzoo.net, mode.com/sql-tutorial
-- **dbt**: docs.getdbt.com
-- **Apache Spark**: spark.apache.org/docs
-- **Airflow**: airflow.apache.org
-- **Great Expectations**: greatexpectations.io
-- **Data warehouses**: snowflake.com, bigquery.cloud.google.com
