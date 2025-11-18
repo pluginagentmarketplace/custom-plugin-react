@@ -1,0 +1,58 @@
+{
+  "hooks": [
+    {
+      "id": "track-learning-progress",
+      "trigger": "user-interaction",
+      "event": "agent-invoked",
+      "description": "Track which agents and skills users interact with",
+      "enabled": true,
+      "action": "log-interaction"
+    },
+    {
+      "id": "validate-assessment",
+      "trigger": "command-executed",
+      "event": "assess-skills",
+      "description": "Validate skill assessment answers and format response",
+      "enabled": true,
+      "action": "validate-and-format"
+    },
+    {
+      "id": "personalize-recommendations",
+      "trigger": "assessment-completed",
+      "description": "Generate personalized learning recommendations based on assessment",
+      "enabled": true,
+      "action": "generate-recommendations"
+    },
+    {
+      "id": "suggest-next-agent",
+      "trigger": "skill-mastered",
+      "description": "Suggest next specialization to explore based on current learning",
+      "enabled": true,
+      "action": "suggest-next-path"
+    },
+    {
+      "id": "milestone-celebration",
+      "trigger": "milestone-reached",
+      "description": "Celebrate learning milestones and completion",
+      "enabled": true,
+      "action": "show-milestone"
+    },
+    {
+      "id": "resource-cache-update",
+      "trigger": "command-executed",
+      "event": "find-resources",
+      "description": "Cache and update resource listings periodically",
+      "enabled": true,
+      "action": "update-cache"
+    }
+  ],
+  "configuration": {
+    "enable_progress_tracking": true,
+    "enable_recommendations": true,
+    "enable_community_suggestions": true,
+    "cache_resources": true,
+    "cache_ttl_hours": 24,
+    "log_level": "info",
+    "analytics_enabled": true
+  }
+}
