@@ -1,0 +1,102 @@
+{
+  "name": "developer-roadmap-plugin",
+  "version": "1.0.0",
+  "description": "Complete learning paths for 7 major developer specializations based on kamranahmedse/developer-roadmap",
+  "author": "Claude Code",
+  "license": "MIT",
+  "repository": "https://github.com/kamranahmedse/developer-roadmap",
+  "keywords": [
+    "learning",
+    "roadmap",
+    "development",
+    "career-path",
+    "frontend",
+    "backend",
+    "devops",
+    "ai-ml",
+    "mobile",
+    "data-engineering",
+    "architecture"
+  ],
+  "agents": [
+    {
+      "id": "frontend-developer",
+      "path": "./agents/01-frontend-developer.md"
+    },
+    {
+      "id": "backend-developer",
+      "path": "./agents/02-backend-developer.md"
+    },
+    {
+      "id": "devops-engineer",
+      "path": "./agents/03-devops-engineer.md"
+    },
+    {
+      "id": "ai-ml-engineer",
+      "path": "./agents/04-ai-ml-engineer.md"
+    },
+    {
+      "id": "mobile-developer",
+      "path": "./agents/05-mobile-developer.md"
+    },
+    {
+      "id": "data-engineer",
+      "path": "./agents/06-data-engineer.md"
+    },
+    {
+      "id": "system-architect",
+      "path": "./agents/07-system-architect.md"
+    }
+  ],
+  "commands": [
+    {
+      "id": "learn-path",
+      "path": "./commands/learn-path.md"
+    },
+    {
+      "id": "explore-roadmap",
+      "path": "./commands/explore-roadmap.md"
+    },
+    {
+      "id": "assess-skills",
+      "path": "./commands/assess-skills.md"
+    },
+    {
+      "id": "find-resources",
+      "path": "./commands/find-resources.md"
+    }
+  ],
+  "skills": [
+    {
+      "id": "frontend-skills",
+      "path": "./skills/frontend/SKILL.md"
+    },
+    {
+      "id": "backend-skills",
+      "path": "./skills/backend/SKILL.md"
+    },
+    {
+      "id": "devops-skills",
+      "path": "./skills/devops/SKILL.md"
+    },
+    {
+      "id": "ai-ml-skills",
+      "path": "./skills/ai-ml/SKILL.md"
+    },
+    {
+      "id": "mobile-skills",
+      "path": "./skills/mobile/SKILL.md"
+    },
+    {
+      "id": "data-engineering-skills",
+      "path": "./skills/data-engineering/SKILL.md"
+    },
+    {
+      "id": "architecture-skills",
+      "path": "./skills/architecture/SKILL.md"
+    }
+  ],
+  "hooks": {
+    "path": "./hooks/hooks.json"
+  }
+}
