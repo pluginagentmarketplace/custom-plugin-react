@@ -1,17 +1,17 @@
-# Developer Roadmap Plugin
+# React Developer Roadmap Plugin
 
-**A comprehensive learning and career development plugin for Claude Code based on the kamranahmedse/developer-roadmap repository.**
+**Complete React ecosystem learning path based on roadmap.sh/react**
 
-Create personalized learning paths across 7 major developer specializations with expert guidance, resources, and hands-on projects.
+Master modern React development from fundamentals to advanced patterns with expert guidance, practical examples, and production-ready skills.
 
 ## 🎯 Overview
 
-This plugin transforms the developer-roadmap into an interactive learning experience with:
+This plugin provides a comprehensive React learning journey with:
 
-- **7 Specialized Agents** - Expert guidance for each career path
-- **7 Skill Modules** - Practical skills with code examples
-- **4 Discovery Commands** - Navigate learning paths and resources
-- **Intelligent Hooks** - Progress tracking and personalization
+- **7 Specialized Agents** - Expert guidance for each React skill level
+- **7 Skill Modules** - Hands-on React patterns with code examples
+- **4 Learning Commands** - Navigate your React learning path
+- **Production-Ready Focus** - Real-world patterns and best practices
 
 ## 🚀 Quick Start
 
@@ -25,260 +25,413 @@ This plugin transforms the developer-roadmap into an interactive learning experi
 Or load locally:
 ```bash
 # From plugin directory
-/plugin load ./developer-roadmap-plugin
+/plugin load ./react-developer-roadmap
 ```
 
 ### First Steps
 
-1. **Choose Your Path**
+1. **Start Learning React**
    ```
-   /learn-path
+   /learn-react
    ```
-   Select from 7 specializations and get a personalized roadmap
+   Get personalized React learning path based on your level
 
-2. **Explore All Options**
+2. **Explore React Roadmap**
    ```
-   /explore-roadmap
+   /explore-react-roadmap
    ```
-   Browse all 79 roadmaps from the original repository
+   Navigate the complete React ecosystem
 
-3. **Assess Your Skills**
+3. **Assess Your React Skills**
    ```
-   /assess-skills
+   /assess-react-skills
    ```
-   Evaluate your current proficiency and get recommendations
+   Evaluate your React knowledge and get recommendations
 
-4. **Find Resources**
+4. **Find React Resources**
    ```
-   /find-resources <specialization>
+   /find-react-resources
    ```
-   Discover curated learning materials and communities
+   Discover official docs, tutorials, and community resources
 
 ## 🏗️ Plugin Architecture
 
-### Agents (7 Specialized Experts)
+### Agents (7 React Experts)
 
 | Agent | Focus | Best For |
 |-------|-------|----------|
-| **Frontend Developer** | React, Vue, Angular, TypeScript, CSS | Building user interfaces and web apps |
-| **Backend Developer** | Node.js, Python, Java, APIs, Databases | Server-side logic and data management |
-| **DevOps Engineer** | Docker, Kubernetes, AWS, Infrastructure | Deployment, scaling, automation |
-| **AI/ML Engineer** | ML, Deep Learning, LLMs, PyTorch | Building intelligent systems |
-| **Mobile Developer** | iOS, Android, React Native, Flutter | Mobile application development |
-| **Data Engineer** | Data Pipelines, Warehouses, Big Data | Building data infrastructure |
-| **System Architect** | System Design, Scalability, Performance | Large-scale system design |
+| **React Fundamentals** | JSX, Components, Props, State | Beginners starting with React |
+| **Hooks & Patterns** | useState, useEffect, Custom Hooks | Understanding modern React |
+| **Component Architecture** | Composition, HOCs, Render Props | Building scalable component systems |
+| **State Management** | Context, Redux, Zustand | Managing application state |
+| **Routing & Navigation** | React Router v6, Navigation patterns | Building multi-page apps |
+| **Performance Optimization** | Memoization, Code Splitting, Profiling | Optimizing React apps |
+| **Testing & Deployment** | React Testing Library, Jest, CI/CD | Production deployment |
 
-### Skills (7 Comprehensive Modules)
+### Skills (7 Practical Modules)
 
 Each skill includes:
-- **Practical code examples**
-- **Core concepts explained**
-- **Best practices and patterns**
-- **Common challenges and solutions**
-- **Links to official resources**
+- **Code examples and patterns**
+- **Best practices**
+- **Common mistakes to avoid**
+- **Practice exercises**
+- **Official documentation links**
 
 **Available Skills:**
-- `frontend-skills` - Frontend development fundamentals
-- `backend-skills` - Backend architecture and APIs
-- `devops-skills` - Infrastructure and automation
-- `ai-ml-skills` - Machine learning workflows
-- `mobile-skills` - Mobile app development
-- `data-engineering-skills` - Data pipeline design
-- `architecture-skills` - System design patterns
+- `react-hooks-patterns` - Master all React Hooks
+- `component-library` - Build reusable component libraries
+- `redux-state-management` - Redux Toolkit & RTK Query
+- `react-router` - Client-side routing with React Router v6
+- `react-testing-library` - Write maintainable React tests
+- `next-js-framework` - Server-side rendering with Next.js
+- `react-performance` - Performance optimization techniques
 
-### Commands (4 Discovery Tools)
-
-```
-/learn-path          → Personalized learning roadmaps
-/explore-roadmap     → Browse all specializations
-/assess-skills       → Evaluate your expertise
-/find-resources      → Get curated learning materials
-```
-
-## 📚 Learning Paths
-
-Each specialization includes a 12-week learning plan:
-
-### Week Breakdown
-- **Weeks 1-2**: Foundations and fundamentals
-- **Weeks 3-6**: Core technologies and frameworks
-- **Weeks 7-10**: Advanced concepts and patterns
-- **Weeks 11-12**: Production-ready practices
-
-### Example: Frontend Developer Path
+### Commands (4 Learning Tools)
 
 ```
-Week 1-2: HTML5, CSS3, JavaScript ES6+
-Week 3-6: React fundamentals and ecosystem
-Week 7-10: Performance, testing, state management
-Week 11-12: Accessibility, SEO, deployment
+/learn-react              → Get personalized React learning path
+/explore-react-roadmap    → Browse complete React ecosystem
+/assess-react-skills      → Evaluate your React knowledge
+/find-react-resources     → Discover React learning resources
 ```
 
-## 🛠️ Technology Stack
+## 📚 Learning Path
 
-### Core Technologies by Specialization
+### Complete React Journey (4-8 months)
 
-**Frontend:** React, Vue, Angular, TypeScript, Tailwind CSS, Jest, Cypress
+#### Beginner Track (Weeks 1-7)
+- **Weeks 1-3**: React Fundamentals
+  - JSX and components
+  - Props and state
+  - Event handling
+  - Lists and conditional rendering
 
-**Backend:** Node.js, Python, Java, Go, PostgreSQL, MongoDB, Docker
+- **Weeks 4-7**: Hooks & Patterns
+  - useState and useEffect
+  - useContext for state sharing
+  - Custom hooks
+  - Performance hooks (useMemo, useCallback)
 
-**DevOps:** Kubernetes, Docker, Terraform, AWS/GCP/Azure, GitHub Actions
+#### Intermediate Track (Weeks 8-16)
+- **Weeks 8-11**: Component Architecture
+  - Composition patterns
+  - Higher-Order Components
+  - Render props
+  - Compound components
 
-**AI/ML:** PyTorch, TensorFlow, Scikit-learn, Hugging Face, MLflow
+- **Weeks 12-16**: State Management
+  - Context API deep dive
+  - Redux Toolkit
+  - RTK Query for API calls
+  - Zustand and modern alternatives
 
-**Mobile:** Swift, Kotlin, React Native, Flutter, Xcode, Android Studio
+#### Advanced Track (Weeks 17-23)
+- **Weeks 17-19**: Routing & Navigation
+  - React Router v6
+  - Nested routes
+  - Protected routes
+  - Code splitting
 
-**Data:** Apache Spark, dbt, Airflow, Snowflake, SQL, Pandas
+- **Weeks 20-23**: Performance Optimization
+  - React DevTools Profiler
+  - Memoization strategies
+  - List virtualization
+  - Bundle optimization
 
-**Architecture:** System design patterns, distributed systems, scalability
+#### Production Track (Weeks 24-28)
+- **Weeks 24-28**: Testing & Deployment
+  - React Testing Library
+  - Jest configuration
+  - E2E testing with Cypress
+  - CI/CD pipelines
+  - Production deployment
+
+## 🛠️ React Technology Stack
+
+### Core React
+- **React 18+** - Latest features including Concurrent Mode
+- **JSX** - JavaScript XML syntax
+- **Components** - Functional components with Hooks
+- **Props** - Component communication
+- **State** - Local and global state management
+
+### State Management
+- **Context API** - Built-in state sharing
+- **Redux Toolkit** - Predictable state container
+- **RTK Query** - Powerful data fetching
+- **Zustand** - Lightweight state management
+- **Jotai** - Atomic state management
+
+### Routing
+- **React Router v6** - Declarative routing
+- **TanStack Router** - Type-safe routing
+- **Next.js Routing** - File-based routing
+
+### Testing
+- **React Testing Library** - User-centric testing
+- **Jest** - JavaScript testing framework
+- **Cypress** - E2E testing
+- **Playwright** - Cross-browser testing
+
+### Build Tools
+- **Vite** - Next generation build tool
+- **Create React App** - Official React starter
+- **Next.js** - Production framework
+- **Webpack** - Module bundler
+
+### UI & Styling
+- **Tailwind CSS** - Utility-first CSS
+- **styled-components** - CSS-in-JS
+- **Emotion** - CSS-in-JS library
+- **Chakra UI** - Component library
+- **Material-UI** - React components
 
 ## 🎓 How to Use
 
-### For Complete Beginners
-1. Start with `/learn-path`
-2. Choose your specialization
-3. Follow the week-by-week plan
-4. Use agent for questions
-5. Build projects from `/find-resources`
+### For React Beginners
+1. Start with `/learn-react`
+2. Begin with React Fundamentals agent
+3. Follow the beginner track (Weeks 1-7)
+4. Build practice projects
+5. Progress to Hooks & Patterns
 
-### For Career Changers
-1. Run `/assess-skills` to see current level
-2. Get personalized recommendations
-3. Focus on bridging gaps
-4. Combine specializations for unique skills
+### For JavaScript Developers
+1. Run `/assess-react-skills` to evaluate current level
+2. Start with Hooks & Patterns if comfortable with JS
+3. Focus on React-specific patterns
+4. Build real-world projects
+5. Learn state management
 
-### For Skill Enhancement
-1. Choose specific agent or skill
-2. Dive into advanced topics
-3. Build real-world projects
-4. Contribute to open source
+### For Experienced React Developers
+1. Choose specific advanced agents
+2. Dive into Performance Optimization
+3. Master Testing & Deployment
+4. Learn Next.js for SSR
+5. Build production-ready applications
 
-### For Career Planning
-1. Explore multiple paths with `/explore-roadmap`
-2. Assess skills to see strengths
-3. Research roles and salaries
-4. Plan 3-6-12 month goals
+### For Full-Stack Developers
+1. Explore React + Next.js combination
+2. Integrate with backend APIs
+3. Master state management
+4. Implement authentication flows
+5. Deploy to production
 
 ## 📖 Documentation Structure
 
 ```
-developer-roadmap-plugin/
-├── .claude-plugin/plugin.json          # Plugin manifest
-├── agents/                             # 7 Agent markdown files
-│   ├── 01-frontend-developer.md
-│   ├── 02-backend-developer.md
-│   ├── 03-devops-engineer.md
-│   ├── 04-ai-ml-engineer.md
-│   ├── 05-mobile-developer.md
-│   ├── 06-data-engineer.md
-│   └── 07-system-architect.md
-├── skills/                             # 7 Skill modules
-│   ├── frontend/SKILL.md
-│   ├── backend/SKILL.md
-│   ├── devops/SKILL.md
-│   ├── ai-ml/SKILL.md
-│   ├── mobile/SKILL.md
-│   ├── data-engineering/SKILL.md
-│   └── architecture/SKILL.md
-├── commands/                           # 4 Slash commands
+react-developer-roadmap/
+├── .claude-plugin/
+│   └── plugin.json                         # Plugin manifest
+├── agents/                                 # 7 React agents
+│   ├── 01-react-fundamentals.md
+│   ├── 02-hooks-patterns.md
+│   ├── 03-component-architecture.md
+│   ├── 04-state-management.md
+│   ├── 05-routing-navigation.md
+│   ├── 06-performance-optimization.md
+│   └── 07-testing-deployment.md
+├── skills/                                 # 7 Skill modules
+│   ├── react-hooks-patterns/SKILL.md
+│   ├── component-library/SKILL.md
+│   ├── redux-state-management/SKILL.md
+│   ├── react-router/SKILL.md
+│   ├── react-testing-library/SKILL.md
+│   ├── next-js-framework/SKILL.md
+│   └── react-performance/SKILL.md
+├── commands/                               # 4 Slash commands
 │   ├── learn-path.md
 │   ├── explore-roadmap.md
 │   ├── assess-skills.md
 │   └── find-resources.md
-├── hooks/hooks.json                    # Automation configuration
-├── README.md                           # This file
+├── hooks/hooks.json                        # Automation config
+├── README.md                               # This file
 └── LICENSE
 ```
 
 ## 🎯 Key Features
 
-✅ **Comprehensive Coverage** - 79 roadmaps organized into 7 agent categories
+✅ **Modern React Focus** - React 18+ with Hooks and latest patterns
 
-✅ **Expert Guidance** - Each agent specializes in one career path
+✅ **Production-Ready** - Real-world patterns used in production
 
-✅ **Practical Learning** - Real code examples and best practices
+✅ **Comprehensive Coverage** - From basics to advanced optimization
 
-✅ **Personalized Paths** - Assessment-based recommendations
+✅ **Hands-On Learning** - Code examples for every concept
 
-✅ **Resource Curation** - Curated books, courses, communities
+✅ **Best Practices** - Industry-standard patterns and conventions
 
-✅ **Progress Tracking** - Hooks-based learning progress monitoring
+✅ **Testing Focused** - Learn to write maintainable tests
 
-✅ **Interactive** - Slash commands for navigation and discovery
+✅ **Performance First** - Optimization from the start
 
-✅ **Modern Format** - Official Claude Code plugin format
+✅ **Official Roadmap** - Based on roadmap.sh/react
 
-## 🌟 Use Cases
+## 🌟 React Ecosystem Coverage
 
-### For Developers
-- **Career advancement** - Plan your next specialization
-- **Skill gaps** - Identify and fill knowledge gaps
-- **Learning structure** - Follow proven learning paths
-- **Resources** - Find quality learning materials
+### Core React Concepts
+- JSX and Components
+- Props and State
+- Event Handling
+- Conditional Rendering
+- Lists and Keys
+- Forms and Controlled Components
 
-### For Teams
-- **Onboarding** - Standard learning paths for new team members
-- **Skill mapping** - Understand team expertise
-- **Cross-training** - Develop diverse skill sets
-- **Documentation** - Reference architecture patterns
+### React Hooks
+- useState for state management
+- useEffect for side effects
+- useContext for context consumption
+- useReducer for complex state
+- useCallback for function memoization
+- useMemo for value memoization
+- useRef for DOM access and mutable values
+- Custom Hooks for reusable logic
 
-### For Organizations
-- **Talent development** - Structured learning programs
-- **Skills assessment** - Evaluate team capabilities
-- **Knowledge sharing** - Best practices and patterns
-- **Career pathing** - Clear progression routes
+### State Management Solutions
+- Context API and useContext
+- Redux Toolkit (modern Redux)
+- RTK Query (API state)
+- Zustand (lightweight)
+- Jotai (atomic state)
+- Recoil (Facebook's solution)
+
+### Routing & Navigation
+- React Router v6
+- Nested Routes
+- Protected Routes
+- Dynamic Routing
+- Code Splitting Routes
+- Navigation Patterns
+
+### Testing Strategies
+- React Testing Library
+- Jest Configuration
+- Component Testing
+- Hooks Testing
+- Integration Testing
+- E2E Testing with Cypress
+
+### Performance Optimization
+- React.memo
+- useMemo and useCallback
+- Code Splitting
+- Lazy Loading
+- List Virtualization
+- Bundle Optimization
+- React DevTools Profiler
+
+### Production Deployment
+- Build Optimization
+- Environment Variables
+- CI/CD Pipelines
+- Vercel/Netlify Deployment
+- Docker Containerization
+- Monitoring and Logging
 
 ## 📝 Learning Philosophy
 
-This plugin follows proven learning principles:
+This plugin follows React best practices:
 
-1. **Structured Progression** - From fundamentals to advanced concepts
-2. **Hands-on Practice** - Code examples and projects
-3. **Real-world Relevance** - Industry-standard practices
-4. **Expert Patterns** - Proven architectural and design patterns
-5. **Community Learning** - Access to resources and communities
-6. **Continuous Growth** - Paths for ongoing development
+1. **Hooks-First Approach** - Modern functional components
+2. **Composition over Inheritance** - Build with composition
+3. **Accessibility** - WCAG-compliant components
+4. **Performance** - Optimize from the start
+5. **Testing** - Write tests that resemble user behavior
+6. **TypeScript Ready** - Prepare for type safety
 
-## 🔧 Configuration
+## 🔧 Practice Projects
 
-The plugin uses `hooks/hooks.json` for:
-- Progress tracking
-- Learning recommendations
-- Resource caching
-- Milestone celebrations
+### Beginner Projects
+- Todo List with local state
+- Counter with useState
+- Simple Form Validation
+- Product Card Grid
 
-Customize by editing `hooks.json` to match your needs.
+### Intermediate Projects
+- Shopping Cart with Context API
+- Blog with React Router
+- Weather App with API integration
+- Authentication Flow
 
-## 📞 Support & Community
+### Advanced Projects
+- E-commerce Dashboard with Redux
+- Social Media Feed with Infinite Scroll
+- Real-time Chat with WebSockets
+- Full-Stack App with Next.js
 
-- **Questions?** Ask any agent directly
-- **Resources?** Use `/find-resources` command
-- **Assessment Help?** Run `/assess-skills`
-- **Exploration?** Try `/explore-roadmap`
+## 📞 Resources & Community
+
+### Official Documentation
+- [React Official Docs](https://react.dev) - New React docs
+- [React Router](https://reactrouter.com) - Routing documentation
+- [Redux Toolkit](https://redux-toolkit.js.org) - State management
+- [Next.js](https://nextjs.org) - Production framework
+
+### Learning Resources
+- [React Tutorial](https://react.dev/learn) - Official tutorial
+- [React Patterns](https://reactpatterns.com) - Common patterns
+- [Kent C. Dodds Blog](https://kentcdodds.com/blog) - React insights
+
+### Community
+- [Reactiflux Discord](https://www.reactiflux.com) - React community
+- [React Reddit](https://reddit.com/r/reactjs) - Discussions
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/reactjs) - Q&A
 
 ## 🤝 Contributing
 
-This plugin is based on the open-source [developer-roadmap](https://github.com/kamranahmedse/developer-roadmap) project. You can:
+This plugin is based on [roadmap.sh/react](https://roadmap.sh/react). You can:
 
-- Report issues or suggest improvements
-- Contribute new learning paths
-- Share resources and communities
-- Help others in the community
+- Report issues or suggestions
+- Share React resources
+- Contribute examples
+- Help other learners
 
 ## 📄 License
 
-MIT License - Same as the original developer-roadmap project
+MIT License
 
 ## 🙏 Acknowledgments
 
-Built on the excellent work of [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)
+Built on the excellent [roadmap.sh](https://roadmap.sh) project by [@kamranahmedse](https://github.com/kamranahmedse)
 
 ---
 
-**Ready to start your learning journey?**
+**Ready to master React?**
 
 ```
-/learn-path
+/learn-react
 ```
 
-Happy learning! 🚀
+Happy React learning! ⚛️
+
+## 🎯 Specialization Tracks
+
+### Single Page Applications (SPA)
+- Client-side routing
+- State management
+- API integration
+- Performance optimization
+
+### Server-Side Rendering (SSR)
+- Next.js framework
+- Data fetching strategies
+- SEO optimization
+- Performance benefits
+
+### Static Site Generation (SSG)
+- Static site generators
+- Build-time rendering
+- Content management
+- Deployment strategies
+
+### Progressive Web Apps (PWA)
+- Service workers
+- Offline functionality
+- Push notifications
+- App-like experience
+
+---
+
+**Difficulty**: Beginner to Advanced
+**Estimated Learning Time**: 4-8 months
+**Source**: [roadmap.sh/react](https://roadmap.sh/react)
+**Last Updated**: 2025-11-20
