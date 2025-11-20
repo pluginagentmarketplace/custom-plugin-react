@@ -1,102 +1,161 @@
 {
-  "name": "developer-roadmap-plugin",
+  "name": "react-developer-roadmap",
   "version": "1.0.0",
-  "description": "Complete learning paths for 7 major developer specializations based on kamranahmedse/developer-roadmap",
-  "author": "Claude Code",
+  "description": "Complete React ecosystem learning path based on roadmap.sh/react - Master modern React development from fundamentals to advanced patterns",
+  "author": "Plugin Marketplace",
   "license": "MIT",
-  "repository": "https://github.com/kamranahmedse/developer-roadmap",
+  "repository": "https://github.com/pluginagentmarketplace/custom-plugin-react",
+  "homepage": "https://roadmap.sh/react",
   "keywords": [
+    "react",
     "learning",
     "roadmap",
-    "development",
-    "career-path",
     "frontend",
-    "backend",
-    "devops",
-    "ai-ml",
-    "mobile",
-    "data-engineering",
-    "architecture"
+    "javascript",
+    "hooks",
+    "components",
+    "state-management",
+    "routing",
+    "performance",
+    "testing",
+    "next.js"
   ],
   "agents": [
     {
-      "id": "frontend-developer",
-      "path": "./agents/01-frontend-developer.md"
+      "id": "react-fundamentals",
+      "path": "./agents/01-react-fundamentals.md",
+      "name": "React Fundamentals Expert",
+      "description": "Master React basics: JSX, components, props, state, and event handling"
     },
     {
-      "id": "backend-developer",
-      "path": "./agents/02-backend-developer.md"
+      "id": "hooks-patterns",
+      "path": "./agents/02-hooks-patterns.md",
+      "name": "React Hooks Specialist",
+      "description": "Deep dive into React Hooks and custom hook development"
     },
     {
-      "id": "devops-engineer",
-      "path": "./agents/03-devops-engineer.md"
+      "id": "component-architecture",
+      "path": "./agents/03-component-architecture.md",
+      "name": "Component Architecture Guide",
+      "description": "Learn advanced composition patterns, HOCs, and render props"
     },
     {
-      "id": "ai-ml-engineer",
-      "path": "./agents/04-ai-ml-engineer.md"
+      "id": "state-management",
+      "path": "./agents/04-state-management.md",
+      "name": "State Management Expert",
+      "description": "Master Context API, Redux Toolkit, Zustand, and state patterns"
     },
     {
-      "id": "mobile-developer",
-      "path": "./agents/05-mobile-developer.md"
+      "id": "routing-navigation",
+      "path": "./agents/05-routing-navigation.md",
+      "name": "React Router Specialist",
+      "description": "Build navigation with React Router v6 and advanced routing patterns"
     },
     {
-      "id": "data-engineer",
-      "path": "./agents/06-data-engineer.md"
+      "id": "performance-optimization",
+      "path": "./agents/06-performance-optimization.md",
+      "name": "Performance Optimization Expert",
+      "description": "Optimize React apps with memoization, code splitting, and profiling"
     },
     {
-      "id": "system-architect",
-      "path": "./agents/07-system-architect.md"
+      "id": "testing-deployment",
+      "path": "./agents/07-testing-deployment.md",
+      "name": "Testing & Deployment Specialist",
+      "description": "Master React Testing Library, Jest, Cypress, and production deployment"
     }
   ],
   "commands": [
     {
-      "id": "learn-path",
-      "path": "./commands/learn-path.md"
+      "id": "learn-react",
+      "path": "./commands/learn-path.md",
+      "name": "Learn React Path",
+      "description": "Get personalized React learning path based on your level"
     },
     {
-      "id": "explore-roadmap",
-      "path": "./commands/explore-roadmap.md"
+      "id": "explore-react-roadmap",
+      "path": "./commands/explore-roadmap.md",
+      "name": "Explore React Roadmap",
+      "description": "Navigate the complete React developer roadmap"
     },
     {
-      "id": "assess-skills",
-      "path": "./commands/assess-skills.md"
+      "id": "assess-react-skills",
+      "path": "./commands/assess-skills.md",
+      "name": "Assess React Skills",
+      "description": "Evaluate your React knowledge and get recommendations"
     },
     {
-      "id": "find-resources",
-      "path": "./commands/find-resources.md"
+      "id": "find-react-resources",
+      "path": "./commands/find-resources.md",
+      "name": "Find React Resources",
+      "description": "Discover learning resources for specific React topics"
     }
   ],
   "skills": [
     {
-      "id": "frontend-skills",
-      "path": "./skills/frontend/SKILL.md"
+      "id": "react-hooks-patterns",
+      "path": "./skills/react-hooks-patterns/SKILL.md",
+      "name": "React Hooks & Patterns",
+      "description": "Master useState, useEffect, custom hooks, and hook patterns"
     },
     {
-      "id": "backend-skills",
-      "path": "./skills/backend/SKILL.md"
+      "id": "component-library",
+      "path": "./skills/component-library/SKILL.md",
+      "name": "Component Library Building",
+      "description": "Build reusable, accessible React component libraries"
     },
     {
-      "id": "devops-skills",
-      "path": "./skills/devops/SKILL.md"
+      "id": "redux-state-management",
+      "path": "./skills/redux-state-management/SKILL.md",
+      "name": "Redux Toolkit & RTK Query",
+      "description": "Modern Redux state management and API integration"
     },
     {
-      "id": "ai-ml-skills",
-      "path": "./skills/ai-ml/SKILL.md"
+      "id": "react-router",
+      "path": "./skills/react-router/SKILL.md",
+      "name": "React Router v6",
+      "description": "Client-side routing and navigation patterns"
     },
     {
-      "id": "mobile-skills",
-      "path": "./skills/mobile/SKILL.md"
+      "id": "react-testing-library",
+      "path": "./skills/react-testing-library/SKILL.md",
+      "name": "React Testing Library",
+      "description": "Write maintainable tests focused on user behavior"
     },
     {
-      "id": "data-engineering-skills",
-      "path": "./skills/data-engineering/SKILL.md"
+      "id": "next-js-framework",
+      "path": "./skills/next-js-framework/SKILL.md",
+      "name": "Next.js Framework",
+      "description": "SSR, SSG, and production-ready React applications"
     },
     {
-      "id": "architecture-skills",
-      "path": "./skills/architecture/SKILL.md"
+      "id": "react-performance",
+      "path": "./skills/react-performance/SKILL.md",
+      "name": "React Performance Optimization",
+      "description": "Profiling, memoization, code splitting, and optimization"
     }
   ],
   "hooks": {
     "path": "./hooks/hooks.json"
+  },
+  "metadata": {
+    "difficulty": "beginner-to-advanced",
+    "estimated_learning_time": "4-8 months",
+    "roadmap_source": "https://roadmap.sh/react",
+    "last_updated": "2025-11-20",
+    "categories": [
+      "Core React Concepts",
+      "Component Architecture",
+      "State Management",
+      "Routing & Navigation",
+      "API Integration",
+      "Performance Optimization",
+      "Testing & Debugging"
+    ],
+    "specialization_tracks": [
+      "Single Page Applications (SPA)",
+      "Server-Side Rendering (SSR)",
+      "Static Site Generation (SSG)",
+      "Progressive Web Apps (PWA)"
+    ]
   }
 }
