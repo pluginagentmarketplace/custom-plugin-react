@@ -1,0 +1,15 @@
+{
+  "name": "pluginagentmarketplace-react",
+  "owner": {
+    "name": "Plugin Agent Marketplace",
+    "email": "pluginagentmarketplace@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "react-developer-roadmap",
+      "source": "./",
+      "description": "Claude Code plugin for react development",
+      "version": "1.0.0"
+    }
+  ]
+}

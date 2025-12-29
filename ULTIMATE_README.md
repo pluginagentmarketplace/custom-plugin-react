@@ -30,17 +30,14 @@ Transform your tech career with structured, expert-guided learning paths coverin
 **Option 1: Simple Load (Recommended)**
 ```bash
 # In Claude Code, run:
-/plugin load ./developer-roadmap-plugin
 ```
 
 **Option 2: Add to Plugin Directory**
 ```bash
-cp -r developer-roadmap-plugin ~/.claude-code/plugins/
 ```
 
 **Option 3: Marketplace (Coming Soon)**
 ```bash
-/plugin add marketplace:developer-roadmap-plugin
 ```
 
 ### Your First 5 Minutes
@@ -868,7 +865,6 @@ cat .claude-plugin/plugin.json
 claude --version
 
 # Try local loading
-/plugin load ./developer-roadmap-plugin
 ```
 
 ---
@@ -962,13 +958,11 @@ claude --version
 
 ## 📄 License
 
-MIT License - Same as developer-roadmap project
 
 ---
 
 ## 🙏 Acknowledgments
 
-Built on the excellent work of [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)
 
 Inspired by hundreds of developers sharing knowledge through courses, books, and communities.
 

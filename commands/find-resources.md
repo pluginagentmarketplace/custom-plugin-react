@@ -1,3 +1,9 @@
+---
+name: find-resources
+description: resources - Curated Learning Materials & Communities
+allowed-tools: Read
+---
+
 # /find-resources - Curated Learning Materials & Communities
 
 Find **official documentation, courses, books, communities, and tools** for any specialization.

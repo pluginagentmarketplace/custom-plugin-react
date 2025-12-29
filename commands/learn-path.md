@@ -1,3 +1,9 @@
+---
+name: learn-path
+description: path - Your Personalized Learning Roadmap
+allowed-tools: Read
+---
+
 # /learn-path - Your Personalized Learning Roadmap
 
 Choose your specialization and get a **week-by-week personalized learning plan** with milestones, resources, and community support.

@@ -1,3 +1,9 @@
+---
+name: assess-skills
+description: skills - Evaluate Your Technical Expertise
+allowed-tools: Read
+---
+
 # /assess-skills - Evaluate Your Technical Expertise
 
 **Self-assess your skills across 7 specializations and get personalized recommendations.**

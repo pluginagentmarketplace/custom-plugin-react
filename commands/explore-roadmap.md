@@ -1,3 +1,9 @@
+---
+name: explore-roadmap
+description: roadmap - Explore 79 Developer Specializations
+allowed-tools: Read
+---
+
 # /explore-roadmap - Explore 79 Developer Specializations
 
 Browse, filter, and compare **all 79 developer specializations** from the roadmap.sh database. Find your next learning path or explore adjacent skills.
