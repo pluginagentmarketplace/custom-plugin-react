@@ -21,118 +21,35 @@
     "next.js"
   ],
   "agents": [
-    {
-      "id": "react-fundamentals",
-      "path": "./agents/01-react-fundamentals.md",
-      "name": "React Fundamentals Expert",
-      "description": "Master React basics: JSX, components, props, state, and event handling"
-    },
-    {
-      "id": "hooks-patterns",
-      "path": "./agents/02-hooks-patterns.md",
-      "name": "React Hooks Specialist",
-      "description": "Deep dive into React Hooks and custom hook development"
-    },
-    {
-      "id": "component-architecture",
-      "path": "./agents/03-component-architecture.md",
-      "name": "Component Architecture Guide",
-      "description": "Learn advanced composition patterns, HOCs, and render props"
-    },
-    {
-      "id": "state-management",
-      "path": "./agents/04-state-management.md",
-      "name": "State Management Expert",
-      "description": "Master Context API, Redux Toolkit, Zustand, and state patterns"
-    },
-    {
-      "id": "routing-navigation",
-      "path": "./agents/05-routing-navigation.md",
-      "name": "React Router Specialist",
-      "description": "Build navigation with React Router v6 and advanced routing patterns"
-    },
-    {
-      "id": "performance-optimization",
-      "path": "./agents/06-performance-optimization.md",
-      "name": "Performance Optimization Expert",
-      "description": "Optimize React apps with memoization, code splitting, and profiling"
-    },
-    {
-      "id": "testing-deployment",
-      "path": "./agents/07-testing-deployment.md",
-      "name": "Testing & Deployment Specialist",
-      "description": "Master React Testing Library, Jest, Cypress, and production deployment"
-    }
+    "./agents/01-react-developer.md",
+    "./agents/01-react-fundamentals.md",
+    "./agents/02-hooks-patterns.md",
+    "./agents/02-react-fullstack.md",
+    "./agents/03-component-architecture.md",
+    "./agents/03-devops-engineer.md",
+    "./agents/04-ai-ml-engineer.md",
+    "./agents/04-state-management.md",
+    "./agents/05-mobile-developer.md",
+    "./agents/05-routing-navigation.md",
+    "./agents/06-data-engineer.md",
+    "./agents/06-performance-optimization.md",
+    "./agents/07-system-architect.md",
+    "./agents/07-testing-deployment.md"
   ],
   "commands": [
-    {
-      "id": "learn-react",
-      "path": "./commands/learn-path.md",
-      "name": "Learn React Path",
-      "description": "Get personalized React learning path based on your level"
-    },
-    {
-      "id": "explore-react-roadmap",
-      "path": "./commands/explore-roadmap.md",
-      "name": "Explore React Roadmap",
-      "description": "Navigate the complete React developer roadmap"
-    },
-    {
-      "id": "assess-react-skills",
-      "path": "./commands/assess-skills.md",
-      "name": "Assess React Skills",
-      "description": "Evaluate your React knowledge and get recommendations"
-    },
-    {
-      "id": "find-react-resources",
-      "path": "./commands/find-resources.md",
-      "name": "Find React Resources",
-      "description": "Discover learning resources for specific React topics"
-    }
+    "./commands/assess-skills.md",
+    "./commands/explore-roadmap.md",
+    "./commands/find-resources.md",
+    "./commands/learn-path.md"
   ],
   "skills": [
-    {
-      "id": "react-hooks-patterns",
-      "path": "./skills/react-hooks-patterns/SKILL.md",
-      "name": "React Hooks & Patterns",
-      "description": "Master useState, useEffect, custom hooks, and hook patterns"
-    },
-    {
-      "id": "component-library",
-      "path": "./skills/component-library/SKILL.md",
-      "name": "Component Library Building",
-      "description": "Build reusable, accessible React component libraries"
-    },
-    {
-      "id": "redux-state-management",
-      "path": "./skills/redux-state-management/SKILL.md",
-      "name": "Redux Toolkit & RTK Query",
-      "description": "Modern Redux state management and API integration"
-    },
-    {
-      "id": "react-router",
-      "path": "./skills/react-router/SKILL.md",
-      "name": "React Router v6",
-      "description": "Client-side routing and navigation patterns"
-    },
-    {
-      "id": "react-testing-library",
-      "path": "./skills/react-testing-library/SKILL.md",
-      "name": "React Testing Library",
-      "description": "Write maintainable tests focused on user behavior"
-    },
-    {
-      "id": "next-js-framework",
-      "path": "./skills/next-js-framework/SKILL.md",
-      "name": "Next.js Framework",
-      "description": "SSR, SSG, and production-ready React applications"
-    },
-    {
-      "id": "react-performance",
-      "path": "./skills/react-performance/SKILL.md",
-      "name": "React Performance Optimization",
-      "description": "Profiling, memoization, code splitting, and optimization"
-    }
+    "./skills/component-library/SKILL.md",
+    "./skills/next-js-framework/SKILL.md",
+    "./skills/react-hooks-patterns/SKILL.md",
+    "./skills/react-performance/SKILL.md",
+    "./skills/react-router/SKILL.md",
+    "./skills/react-testing-library/SKILL.md",
+    "./skills/redux-state-management/SKILL.md"
   ],
   "hooks": {
     "path": "./hooks/hooks.json"

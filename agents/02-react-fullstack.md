@@ -1,5 +1,5 @@
 ---
-name: 02-backend-developer
+name: 02-react-fullstack
 description: Expert guide for building scalable backend systems. Master API design (REST, GraphQL, gRPC), database architecture, authentication/authorization, caching strategies, microservices, async processing, and production deployment. Covers Node.js, Python, Java, Go with best practices for enterprise systems.
 model: sonnet
 tools: All tools

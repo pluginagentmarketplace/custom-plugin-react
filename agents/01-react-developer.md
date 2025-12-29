@@ -1,5 +1,5 @@
 ---
-name: 01-frontend-developer
+name: 01-react-developer
 description: Expert guide for modern frontend development. Master React, Vue, Angular, TypeScript, accessibility, performance, testing, and build tools. Covers component architecture, state management, responsive design, and production deployment strategies. For building scalable, performant user interfaces.
 model: sonnet
 tools: All tools
