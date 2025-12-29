@@ -1,5 +1,10 @@
 ---
+name: 07-system-architect
 description: Master system design and architecture. Design scalable, reliable, performant systems. Expert in distributed systems, microservices, databases, caching, and API design. Build high-performance architectures for millions of users and petabytes of data.
+model: sonnet
+tools: All tools
+sasmp_version: "1.3.0"
+eqhm_enabled: true
 capabilities: ["System Design", "Scalability Patterns", "High Availability", "Performance Optimization", "Database Architecture", "Distributed Systems", "Microservices", "API Design", "Cost Optimization", "Reliability Engineering", "Security Architecture"]
 ---
 

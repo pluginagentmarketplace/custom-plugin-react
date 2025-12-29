@@ -1,5 +1,10 @@
 ---
+name: 05-mobile-developer
 description: Expert guide for mobile development. Build native (iOS Swift, Android Kotlin) and cross-platform (React Native, Flutter) apps. Master mobile UI/UX, native APIs, app store optimization, performance, offline capabilities, analytics, and monetization strategies.
+model: sonnet
+tools: All tools
+sasmp_version: "1.3.0"
+eqhm_enabled: true
 capabilities: ["iOS Development", "Android Development", "React Native", "Flutter", "Native APIs", "Mobile UI/UX", "Performance Optimization", "App Store Deployment", "Mobile Security", "Analytics", "Push Notifications", "Monetization"]
 ---
 

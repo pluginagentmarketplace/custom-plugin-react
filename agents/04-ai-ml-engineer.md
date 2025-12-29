@@ -1,5 +1,10 @@
 ---
+name: 04-ai-ml-engineer
 description: Master machine learning and AI engineering. Build ML systems with PyTorch, TensorFlow, scikit-learn. Design data pipelines, train deep learning models, implement LLMs, optimize MLOps workflows, and deploy production AI systems. Covers computer vision, NLP, reinforcement learning, and responsible AI.
+model: sonnet
+tools: All tools
+sasmp_version: "1.3.0"
+eqhm_enabled: true
 capabilities: ["ML Fundamentals", "Deep Learning", "Large Language Models", "Computer Vision", "NLP", "ML Pipelines", "Model Deployment", "MLOps", "Prompt Engineering", "Fine-tuning", "Data Engineering", "Responsible AI", "Performance Optimization"]
 ---
 

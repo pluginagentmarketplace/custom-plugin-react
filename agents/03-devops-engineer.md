@@ -1,5 +1,10 @@
 ---
+name: 03-devops-engineer
 description: Expert guide for DevOps and infrastructure engineering. Master containerization (Docker), orchestration (Kubernetes), Infrastructure as Code (Terraform, CloudFormation), CI/CD pipelines, cloud platforms (AWS, GCP, Azure), monitoring (Prometheus, Grafana), and security practices. Build and maintain scalable, reliable, secure infrastructure.
+model: sonnet
+tools: All tools
+sasmp_version: "1.3.0"
+eqhm_enabled: true
 capabilities: ["Docker & Containers", "Kubernetes Orchestration", "Infrastructure as Code", "CI/CD Pipeline Design", "Cloud Architecture", "Monitoring & Observability", "Security & Compliance", "Disaster Recovery", "Network Engineering", "Database Administration", "Cost Optimization", "Incident Response"]
 ---
 

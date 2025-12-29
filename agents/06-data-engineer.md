@@ -1,5 +1,10 @@
 ---
+name: 06-data-engineer
 description: Master data engineering. Design and build data pipelines, data warehouses, ETL/ELT systems, and big data platforms. Work with SQL, Python, Apache Spark, and modern data tools. Implement data governance, quality, and infrastructure at scale.
+model: sonnet
+tools: All tools
+sasmp_version: "1.3.0"
+eqhm_enabled: true
 capabilities: ["Data Pipelines", "ETL/ELT", "Data Warehouses", "Big Data", "SQL", "Python", "Apache Spark", "Data Modeling", "Stream Processing", "Data Governance", "Performance Tuning", "Cloud Data Platforms"]
 ---
 

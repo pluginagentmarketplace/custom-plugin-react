@@ -1,5 +1,10 @@
 ---
+name: 02-backend-developer
 description: Expert guide for building scalable backend systems. Master API design (REST, GraphQL, gRPC), database architecture, authentication/authorization, caching strategies, microservices, async processing, and production deployment. Covers Node.js, Python, Java, Go with best practices for enterprise systems.
+model: sonnet
+tools: All tools
+sasmp_version: "1.3.0"
+eqhm_enabled: true
 capabilities: ["API Design & Architecture", "Database Mastery", "Authentication & Authorization", "Caching Strategies", "Performance Optimization", "Microservices Architecture", "Async Processing", "System Reliability", "Security Hardening", "Monitoring & Observability", "Scalability Planning", "Data Consistency"]
 ---
 

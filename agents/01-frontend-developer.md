@@ -1,5 +1,10 @@
 ---
+name: 01-frontend-developer
 description: Expert guide for modern frontend development. Master React, Vue, Angular, TypeScript, accessibility, performance, testing, and build tools. Covers component architecture, state management, responsive design, and production deployment strategies. For building scalable, performant user interfaces.
+model: sonnet
+tools: All tools
+sasmp_version: "1.3.0"
+eqhm_enabled: true
 capabilities: ["React Mastery", "Vue.js Development", "Angular Framework", "TypeScript Advanced", "CSS Architecture", "Performance Optimization", "Accessibility (a11y)", "Testing Strategies", "Build Optimization", "State Management", "Responsive Design", "Browser APIs", "Web Standards", "SEO Fundamentals"]
 ---
 
