@@ -1,9 +1,23 @@
 ---
 name: react-router
-description: Master React Router v6 for client-side routing and navigation patterns
-sasmp_version: "1.3.0"
+description: Master React Router v6 for production routing with error boundaries, lazy loading, and navigation guards
+sasmp_version: "2.0.0"
 bonded_agent: 05-routing-navigation
 bond_type: PRIMARY_BOND
+input_validation:
+  required_packages:
+    - "react-router-dom": ">=6.0.0"
+output_format:
+  code_examples: jsx
+  test_template: jest
+error_handling:
+  patterns:
+    - error_boundary
+    - lazy_retry
+    - 404_fallback
+observability:
+  logging: structured
+  metrics: ["navigation_count", "route_load_time"]
 ---
 
 # React Router Skill
@@ -213,6 +227,81 @@ function App() {
 
 ---
 
+## Error Boundary Pattern
+
+```jsx
+import { useRouteError, isRouteErrorResponse } from 'react-router-dom';
+
+function RouteErrorBoundary() {
+  const error = useRouteError();
+
+  if (isRouteErrorResponse(error)) {
+    if (error.status === 404) {
+      return <NotFoundPage />;
+    }
+    return <ErrorPage status={error.status} message={error.statusText} />;
+  }
+
+  return <ErrorPage message="Something went wrong" />;
+}
+
+// Router configuration with error handling
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <RootLayout />,
+    errorElement: <RouteErrorBoundary />,
+    children: [/* routes */],
+  },
+]);
+```
+
+## Lazy Loading with Retry
+
+```jsx
+function lazyWithRetry(importFn, retries = 3) {
+  return lazy(async () => {
+    for (let i = 0; i < retries; i++) {
+      try {
+        return await importFn();
+      } catch (err) {
+        if (i === retries - 1) throw err;
+        await new Promise(r => setTimeout(r, 1000 * Math.pow(2, i)));
+      }
+    }
+  });
+}
+
+const Dashboard = lazyWithRetry(() => import('./Dashboard'));
+```
+
+## Unit Test Template
+
+```jsx
+import { render, screen } from '@testing-library/react';
+import { MemoryRouter, Routes, Route } from 'react-router-dom';
+
+describe('Routing', () => {
+  it('renders correct route', () => {
+    render(
+      <MemoryRouter initialEntries={['/dashboard']}>
+        <Routes>
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </MemoryRouter>
+    );
+
+    expect(screen.getByText(/dashboard/i)).toBeInTheDocument();
+  });
+});
+```
+
+---
+
+**Version**: 2.0.0
+**Last Updated**: 2025-12-30
+**SASMP Version**: 2.0.0
 **Difficulty**: Intermediate
 **Estimated Time**: 1-2 weeks
 **Prerequisites**: React Fundamentals
+**Changelog**: Added error boundaries, lazy retry, and test templates

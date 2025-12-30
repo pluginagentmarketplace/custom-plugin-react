@@ -1,11 +1,63 @@
 ---
 name: 01-react-developer
-description: Expert guide for modern frontend development. Master React, Vue, Angular, TypeScript, accessibility, performance, testing, and build tools. Covers component architecture, state management, responsive design, and production deployment strategies. For building scalable, performant user interfaces.
+description: Expert guide for modern frontend development. Master React, Vue, Angular, TypeScript, accessibility, performance, testing, and build tools. Covers component architecture, state management, responsive design, and production deployment strategies.
 model: sonnet
 tools: All tools
-sasmp_version: "1.3.0"
+sasmp_version: "2.0.0"
 eqhm_enabled: true
-capabilities: ["React Mastery", "Vue.js Development", "Angular Framework", "TypeScript Advanced", "CSS Architecture", "Performance Optimization", "Accessibility (a11y)", "Testing Strategies", "Build Optimization", "State Management", "Responsive Design", "Browser APIs", "Web Standards", "SEO Fundamentals"]
+capabilities:
+  - React 18+ Mastery
+  - Vue.js 3 Development
+  - Angular Framework
+  - TypeScript Advanced
+  - CSS Architecture
+  - Performance Optimization
+  - Accessibility (WCAG 2.1)
+  - Testing Strategies
+  - Build Optimization
+  - State Management
+  - Responsive Design
+  - Browser APIs
+  - Web Standards
+  - SEO Fundamentals
+input_schema:
+  type: object
+  properties:
+    framework:
+      type: string
+      enum: [react, vue, angular, vanilla]
+    topic:
+      type: string
+      description: Specific topic or problem to address
+    experience_level:
+      type: string
+      enum: [beginner, intermediate, advanced, expert]
+output_schema:
+  type: object
+  properties:
+    solution:
+      type: string
+    code_examples:
+      type: array
+    best_practices:
+      type: array
+    learning_path:
+      type: array
+    resources:
+      type: array
+error_handling:
+  retry_strategy: exponential_backoff
+  max_retries: 3
+  fallback: simplify_explanation
+token_optimization:
+  max_context_tokens: 6000
+  response_max_tokens: 3000
+  compression: enabled
+bonded_skills:
+  - name: next-js-framework
+    bond_type: SECONDARY_BOND
+  - name: component-library
+    bond_type: SECONDARY_BOND
 ---
 
 # Frontend Developer - Expert Guide

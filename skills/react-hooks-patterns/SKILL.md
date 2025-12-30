@@ -1,9 +1,30 @@
 ---
 name: react-hooks-patterns
-description: Master React Hooks including useState, useEffect, useContext, useReducer, and custom hooks
-sasmp_version: "1.3.0"
+description: Master React Hooks including useState, useEffect, useContext, useReducer, and custom hooks with production-grade patterns
+sasmp_version: "2.0.0"
 bonded_agent: 02-hooks-patterns
 bond_type: PRIMARY_BOND
+input_validation:
+  required_context:
+    - react_version: ">=18.0.0"
+    - node_version: ">=18.0.0"
+  parameter_types:
+    hook_name: string
+    dependencies: array
+output_format:
+  code_examples: jsx
+  test_template: jest
+error_handling:
+  patterns:
+    - exponential_backoff
+    - abort_controller
+    - cleanup_functions
+  retry_config:
+    max_retries: 3
+    backoff_multiplier: 2
+observability:
+  logging: structured
+  metrics: ["render_count", "effect_duration"]
 ---
 
 # React Hooks Patterns Skill
@@ -311,6 +332,83 @@ Can you:
 
 ---
 
+## Unit Test Template
+
+```jsx
+// __tests__/useCustomHook.test.js
+import { renderHook, act, waitFor } from '@testing-library/react';
+import { useCustomHook } from '../useCustomHook';
+
+describe('useCustomHook', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+  it('should initialize with default state', () => {
+    const { result } = renderHook(() => useCustomHook());
+    expect(result.current.state).toBe(initialValue);
+  });
+
+  it('should handle async operations', async () => {
+    const { result } = renderHook(() => useCustomHook());
+
+    await act(async () => {
+      await result.current.asyncAction();
+    });
+
+    await waitFor(() => {
+      expect(result.current.loading).toBe(false);
+    });
+  });
+
+  it('should cleanup on unmount', () => {
+    const cleanup = jest.fn();
+    const { unmount } = renderHook(() => useCustomHook({ onCleanup: cleanup }));
+
+    unmount();
+    expect(cleanup).toHaveBeenCalled();
+  });
+});
+```
+
+## Retry Logic Pattern
+
+```jsx
+function useRetryAsync(asyncFn, options = {}) {
+  const { maxRetries = 3, backoff = 1000 } = options;
+  const [state, setState] = useState({ data: null, error: null, loading: false });
+
+  const execute = useCallback(async (...args) => {
+    setState(s => ({ ...s, loading: true, error: null }));
+    let lastError;
+
+    for (let attempt = 0; attempt <= maxRetries; attempt++) {
+      try {
+        const data = await asyncFn(...args);
+        setState({ data, error: null, loading: false });
+        return data;
+      } catch (error) {
+        lastError = error;
+        if (attempt < maxRetries) {
+          await new Promise(r => setTimeout(r, backoff * Math.pow(2, attempt)));
+        }
+      }
+    }
+
+    setState({ data: null, error: lastError, loading: false });
+    throw lastError;
+  }, [asyncFn, maxRetries, backoff]);
+
+  return { ...state, execute };
+}
+```
+
+---
+
+**Version**: 2.0.0
+**Last Updated**: 2025-12-30
+**SASMP Version**: 2.0.0
 **Difficulty**: Intermediate
 **Estimated Time**: 2-3 weeks
 **Prerequisites**: React Fundamentals
+**Changelog**: Added retry patterns, test templates, and observability hooks

@@ -1,11 +1,45 @@
 ---
 name: 05-mobile-developer
-description: Expert guide for mobile development. Build native (iOS Swift, Android Kotlin) and cross-platform (React Native, Flutter) apps. Master mobile UI/UX, native APIs, app store optimization, performance, offline capabilities, analytics, and monetization strategies.
+description: Expert guide for React Native mobile development. Build cross-platform iOS and Android apps with React Native, Expo, and production-grade mobile patterns.
 model: sonnet
 tools: All tools
-sasmp_version: "1.3.0"
+sasmp_version: "2.0.0"
 eqhm_enabled: true
-capabilities: ["iOS Development", "Android Development", "React Native", "Flutter", "Native APIs", "Mobile UI/UX", "Performance Optimization", "App Store Deployment", "Mobile Security", "Analytics", "Push Notifications", "Monetization"]
+capabilities:
+  - React Native Development
+  - Expo Framework
+  - Mobile UI/UX
+  - Native APIs
+  - Performance Optimization
+  - App Store Deployment
+  - Mobile Security
+  - Analytics Integration
+input_schema:
+  type: object
+  properties:
+    platform:
+      type: string
+      enum: [react-native, expo, ios, android]
+    feature:
+      type: string
+      description: Specific feature or integration needed
+output_schema:
+  type: object
+  properties:
+    implementation:
+      type: string
+    code_examples:
+      type: array
+    platform_specific:
+      type: object
+error_handling:
+  retry_strategy: exponential_backoff
+  max_retries: 3
+  fallback: platform_native_fallback
+token_optimization:
+  max_context_tokens: 4500
+  response_max_tokens: 2000
+  compression: enabled
 ---
 
 # Mobile Developer - Expert Guide

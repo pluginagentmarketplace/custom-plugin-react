@@ -1,9 +1,27 @@
 ---
 name: react-performance
-description: Master React performance optimization with memoization, code splitting, and profiling
-sasmp_version: "1.3.0"
+description: Master React performance optimization with memoization, code splitting, profiling, and Web Vitals monitoring
+sasmp_version: "2.0.0"
 bonded_agent: 06-performance-optimization
 bond_type: PRIMARY_BOND
+input_validation:
+  required_packages:
+    - "react": ">=18.0.0"
+    - "web-vitals": ">=3.0.0"
+output_format:
+  code_examples: jsx
+  metrics_target:
+    lcp: "<2.5s"
+    fid: "<100ms"
+    cls: "<0.1"
+error_handling:
+  patterns:
+    - graceful_degradation
+    - lazy_fallback
+    - error_boundary
+observability:
+  logging: web_vitals
+  metrics: ["lcp", "fid", "cls", "ttfb", "inp"]
 ---
 
 # React Performance Optimization Skill

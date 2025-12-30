@@ -1,9 +1,25 @@
 ---
 name: react-testing-library
-description: Write maintainable React tests with Testing Library focusing on user behavior
-sasmp_version: "1.3.0"
+description: Write production-grade React tests with Testing Library, MSW, and comprehensive coverage patterns
+sasmp_version: "2.0.0"
 bonded_agent: 07-testing-deployment
 bond_type: PRIMARY_BOND
+input_validation:
+  required_packages:
+    - "@testing-library/react": ">=14.0.0"
+    - "@testing-library/user-event": ">=14.0.0"
+    - "msw": ">=2.0.0"
+output_format:
+  code_examples: jsx
+  coverage_target: 80
+error_handling:
+  patterns:
+    - retry_flaky
+    - async_waitfor
+    - mock_error_states
+observability:
+  logging: jest_console
+  metrics: ["test_duration", "coverage"]
 ---
 
 # React Testing Library Skill
@@ -295,6 +311,77 @@ screen.logTestingPlaygroundURL(); // Get Testing Playground URL
 
 ---
 
+## Flaky Test Prevention
+
+```jsx
+// Configure Jest retry for CI
+// jest.config.js
+module.exports = {
+  testRetry: process.env.CI ? 2 : 0,
+  testTimeout: 10000,
+};
+
+// Robust async pattern
+it('handles async operations reliably', async () => {
+  render(<AsyncComponent />);
+
+  // Use findBy for async content
+  expect(await screen.findByText(/loaded/i, {}, { timeout: 5000 }))
+    .toBeInTheDocument();
+
+  // Ensure loading is gone
+  await waitFor(() => {
+    expect(screen.queryByText(/loading/i)).not.toBeInTheDocument();
+  });
+});
+```
+
+## MSW 2.0 Setup
+
+```jsx
+// mocks/handlers.js
+import { http, HttpResponse } from 'msw';
+
+export const handlers = [
+  http.get('/api/users', () => {
+    return HttpResponse.json([{ id: 1, name: 'John' }]);
+  }),
+
+  http.post('/api/users', async ({ request }) => {
+    const user = await request.json();
+    return HttpResponse.json({ ...user, id: Date.now() }, { status: 201 });
+  }),
+
+  // Error simulation
+  http.get('/api/error', () => {
+    return HttpResponse.json({ message: 'Server Error' }, { status: 500 });
+  }),
+];
+```
+
+## Coverage Configuration
+
+```javascript
+// jest.config.js
+module.exports = {
+  collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/**/*.d.ts'],
+  coverageThreshold: {
+    global: {
+      branches: 80,
+      functions: 80,
+      lines: 80,
+      statements: 80,
+    },
+  },
+};
+```
+
+---
+
+**Version**: 2.0.0
+**Last Updated**: 2025-12-30
+**SASMP Version**: 2.0.0
 **Difficulty**: Intermediate
 **Estimated Time**: 2-3 weeks
 **Prerequisites**: React Fundamentals, Jest Basics
+**Changelog**: Added MSW 2.0, flaky test prevention, and coverage config

@@ -1,3 +1,57 @@
+---
+name: 06-performance-optimization
+description: Expert guide for React performance optimization. Master profiling, memoization, code splitting, virtualization, and Web Vitals monitoring for production applications.
+model: sonnet
+tools: All tools
+sasmp_version: "2.0.0"
+eqhm_enabled: true
+capabilities:
+  - React Profiler Analysis
+  - Memoization Strategies
+  - Code Splitting
+  - Bundle Optimization
+  - List Virtualization
+  - Image Optimization
+  - Web Vitals Monitoring
+  - Performance Budgets
+input_schema:
+  type: object
+  properties:
+    optimization_type:
+      type: string
+      enum: [rendering, bundle, network, memory, initial_load, runtime]
+    current_metrics:
+      type: object
+      properties:
+        lcp: { type: number }
+        fid: { type: number }
+        cls: { type: number }
+    target_metrics:
+      type: object
+output_schema:
+  type: object
+  properties:
+    optimizations:
+      type: array
+    code_changes:
+      type: array
+    expected_improvement:
+      type: object
+    monitoring_setup:
+      type: string
+error_handling:
+  retry_strategy: exponential_backoff
+  max_retries: 3
+  fallback: graceful_degradation
+token_optimization:
+  max_context_tokens: 5000
+  response_max_tokens: 2500
+  compression: enabled
+bonded_skills:
+  - name: react-performance
+    bond_type: PRIMARY_BOND
+---
+
 # React Performance Optimization Agent
 
 You are a specialized React Performance expert focused on teaching optimization techniques for React applications.
@@ -592,8 +646,129 @@ function List({ items }) {
 
 ---
 
-**Version**: 1.0.0
-**Last Updated**: 2025-11-20
+## 🚨 Troubleshooting Guide
+
+### Decision Tree: Performance Issues
+
+```
+Performance Problem?
+├── Slow Initial Load?
+│   ├── Large bundle size?
+│   │   └── Fix: Code splitting, tree shaking
+│   ├── Blocking resources?
+│   │   └── Fix: Defer non-critical JS/CSS
+│   └── Slow server response?
+│       └── Fix: CDN, caching, SSR
+├── Slow Renders?
+│   ├── Too many re-renders?
+│   │   └── Profile: React DevTools
+│   ├── Expensive calculations?
+│   │   └── Fix: useMemo
+│   └── Large component tree?
+│       └── Fix: Virtualization
+├── Poor Web Vitals?
+│   ├── High LCP (>2.5s)?
+│   │   └── Fix: Optimize largest image/text
+│   ├── High FID (>100ms)?
+│   │   └── Fix: Break up long tasks
+│   └── High CLS (>0.1)?
+│       └── Fix: Reserve space for dynamic content
+├── Memory Issues?
+│   ├── Growing heap?
+│   │   └── Check: Event listener cleanup
+│   ├── Detached nodes?
+│   │   └── Check: Component unmount cleanup
+│   └── Large state?
+│       └── Fix: Normalize, paginate
+└── Network Issues?
+    ├── Too many requests?
+    │   └── Fix: Batching, caching
+    └── Large payloads?
+        └── Fix: Pagination, compression
+```
+
+### Debug Checklist
+
+1. **Lighthouse Audit**: Run performance audit
+2. **React Profiler**: Record and analyze renders
+3. **Bundle Analyzer**: Check bundle composition
+4. **Network Tab**: Review waterfall
+5. **Memory Tab**: Check for leaks
+
+### Log Interpretation
+
+| Metric | Threshold | Action |
+|--------|-----------|--------|
+| LCP > 2.5s | Poor | Optimize hero images, preload fonts |
+| FID > 100ms | Poor | Break up main thread work |
+| CLS > 0.1 | Poor | Set explicit dimensions |
+| TTI > 5s | Poor | Reduce JS, defer non-critical |
+| Bundle > 250KB | Warning | Code split, lazy load |
+
+### Recovery Patterns
+
+**Performance Monitoring Hook:**
+```jsx
+function usePerformanceMonitor(componentName) {
+  useEffect(() => {
+    const start = performance.now();
+
+    return () => {
+      const duration = performance.now() - start;
+      if (duration > 16) { // Longer than one frame
+        console.warn(`${componentName} took ${duration.toFixed(2)}ms`);
+        // Send to monitoring service
+        sendMetric('slow_component', { componentName, duration });
+      }
+    };
+  });
+}
+```
+
+**Automatic Bundle Analysis:**
+```javascript
+// vite.config.js
+import { visualizer } from 'rollup-plugin-visualizer';
+
+export default {
+  plugins: [
+    visualizer({
+      filename: 'bundle-stats.html',
+      gzipSize: true,
+      brotliSize: true,
+      template: 'treemap', // or 'sunburst', 'network'
+    }),
+  ],
+};
+```
+
+**Web Vitals Reporting:**
+```jsx
+import { onCLS, onFID, onLCP, onTTFB, onINP } from 'web-vitals';
+
+function sendToAnalytics({ name, delta, id, rating }) {
+  const body = JSON.stringify({ name, delta, id, rating });
+
+  if (navigator.sendBeacon) {
+    navigator.sendBeacon('/analytics', body);
+  } else {
+    fetch('/analytics', { body, method: 'POST', keepalive: true });
+  }
+}
+
+onCLS(sendToAnalytics);
+onFID(sendToAnalytics);
+onLCP(sendToAnalytics);
+onTTFB(sendToAnalytics);
+onINP(sendToAnalytics);
+```
+
+---
+
+**Version**: 2.0.0
+**Last Updated**: 2025-12-30
+**SASMP Version**: 2.0.0
 **Specialization**: React Performance Optimization
 **Difficulty**: Advanced
 **Estimated Learning Time**: 4 weeks
+**Changelog**: Production-grade update with Web Vitals monitoring, bundle analysis, and performance patterns

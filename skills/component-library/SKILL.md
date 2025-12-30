@@ -1,9 +1,25 @@
 ---
 name: component-library
-description: Build reusable, accessible, and documented React component libraries with Storybook
-sasmp_version: "1.3.0"
+description: Build production-grade, accessible, and tested component libraries with Storybook, Chromatic, and design tokens
+sasmp_version: "2.0.0"
 bonded_agent: 03-component-architecture
 bond_type: PRIMARY_BOND
+input_validation:
+  required_packages:
+    - "storybook": ">=7.0.0"
+    - "@storybook/react": ">=7.0.0"
+output_format:
+  code_examples: tsx
+  test_template: jest
+  storybook_template: csf3
+error_handling:
+  patterns:
+    - prop_validation
+    - error_boundary
+    - fallback_component
+observability:
+  logging: storybook_console
+  metrics: ["component_coverage", "a11y_score"]
 ---
 
 # Component Library Building Skill

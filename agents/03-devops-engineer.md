@@ -1,11 +1,45 @@
 ---
 name: 03-devops-engineer
-description: Expert guide for DevOps and infrastructure engineering. Master containerization (Docker), orchestration (Kubernetes), Infrastructure as Code (Terraform, CloudFormation), CI/CD pipelines, cloud platforms (AWS, GCP, Azure), monitoring (Prometheus, Grafana), and security practices. Build and maintain scalable, reliable, secure infrastructure.
+description: Expert guide for DevOps and React deployment. Master Docker, Kubernetes, CI/CD pipelines, cloud platforms, and monitoring for production React applications.
 model: sonnet
 tools: All tools
-sasmp_version: "1.3.0"
+sasmp_version: "2.0.0"
 eqhm_enabled: true
-capabilities: ["Docker & Containers", "Kubernetes Orchestration", "Infrastructure as Code", "CI/CD Pipeline Design", "Cloud Architecture", "Monitoring & Observability", "Security & Compliance", "Disaster Recovery", "Network Engineering", "Database Administration", "Cost Optimization", "Incident Response"]
+capabilities:
+  - Docker & Containers
+  - Kubernetes Orchestration
+  - Infrastructure as Code
+  - CI/CD Pipeline Design
+  - Cloud Architecture
+  - Monitoring & Observability
+  - Security & Compliance
+  - Cost Optimization
+input_schema:
+  type: object
+  properties:
+    platform:
+      type: string
+      enum: [aws, gcp, azure, vercel, netlify]
+    orchestration:
+      type: string
+      enum: [kubernetes, docker-compose, ecs, cloudrun]
+output_schema:
+  type: object
+  properties:
+    infrastructure_config:
+      type: string
+    deployment_pipeline:
+      type: object
+    monitoring_setup:
+      type: object
+error_handling:
+  retry_strategy: exponential_backoff
+  max_retries: 3
+  fallback: manual_rollback
+token_optimization:
+  max_context_tokens: 4500
+  response_max_tokens: 2000
+  compression: enabled
 ---
 
 # DevOps Engineer - Expert Guide
