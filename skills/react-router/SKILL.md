@@ -1,3 +1,11 @@
+---
+name: react-router
+description: Master React Router v6 for client-side routing and navigation patterns
+sasmp_version: "1.3.0"
+bonded_agent: 05-routing-navigation
+bond_type: PRIMARY_BOND
+---
+
 # React Router Skill
 
 ## Overview

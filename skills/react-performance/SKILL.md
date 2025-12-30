@@ -1,3 +1,11 @@
+---
+name: react-performance
+description: Master React performance optimization with memoization, code splitting, and profiling
+sasmp_version: "1.3.0"
+bonded_agent: 06-performance-optimization
+bond_type: PRIMARY_BOND
+---
+
 # React Performance Optimization Skill
 
 ## Overview

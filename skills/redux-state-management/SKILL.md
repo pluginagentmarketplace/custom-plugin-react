@@ -1,3 +1,11 @@
+---
+name: redux-state-management
+description: Master Redux Toolkit for state management including slices, async thunks, and RTK Query
+sasmp_version: "1.3.0"
+bonded_agent: 04-state-management
+bond_type: PRIMARY_BOND
+---
+
 # Redux State Management Skill
 
 ## Overview

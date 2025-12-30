@@ -1,3 +1,11 @@
+---
+name: next-js-framework
+description: Build production-ready React apps with Next.js SSR, SSG, and API routes
+sasmp_version: "1.3.0"
+bonded_agent: 01-react-fundamentals
+bond_type: SECONDARY_BOND
+---
+
 # Next.js Framework Skill
 
 ## Overview

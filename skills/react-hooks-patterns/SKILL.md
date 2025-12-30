@@ -1,3 +1,11 @@
+---
+name: react-hooks-patterns
+description: Master React Hooks including useState, useEffect, useContext, useReducer, and custom hooks
+sasmp_version: "1.3.0"
+bonded_agent: 02-hooks-patterns
+bond_type: PRIMARY_BOND
+---
+
 # React Hooks Patterns Skill
 
 ## Overview

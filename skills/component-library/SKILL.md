@@ -1,3 +1,11 @@
+---
+name: component-library
+description: Build reusable, accessible, and documented React component libraries with Storybook
+sasmp_version: "1.3.0"
+bonded_agent: 03-component-architecture
+bond_type: PRIMARY_BOND
+---
+
 # Component Library Building Skill
 
 ## Overview

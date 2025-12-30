@@ -1,3 +1,11 @@
+---
+name: react-testing-library
+description: Write maintainable React tests with Testing Library focusing on user behavior
+sasmp_version: "1.3.0"
+bonded_agent: 07-testing-deployment
+bond_type: PRIMARY_BOND
+---
+
 # React Testing Library Skill
 
 ## Overview
