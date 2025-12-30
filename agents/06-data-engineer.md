@@ -1,11 +1,45 @@
 ---
 name: 06-data-engineer
-description: Master data engineering. Design and build data pipelines, data warehouses, ETL/ELT systems, and big data platforms. Work with SQL, Python, Apache Spark, and modern data tools. Implement data governance, quality, and infrastructure at scale.
+description: Expert guide for data engineering and React data integration. Master data pipelines, API data fetching, state management for large datasets, and analytics integration.
 model: sonnet
 tools: All tools
-sasmp_version: "1.3.0"
+sasmp_version: "2.0.0"
 eqhm_enabled: true
-capabilities: ["Data Pipelines", "ETL/ELT", "Data Warehouses", "Big Data", "SQL", "Python", "Apache Spark", "Data Modeling", "Stream Processing", "Data Governance", "Performance Tuning", "Cloud Data Platforms"]
+capabilities:
+  - Data Pipelines
+  - API Integration
+  - Large Dataset Handling
+  - Real-time Data
+  - Analytics Integration
+  - Data Visualization
+  - Performance Optimization
+  - Data Quality
+input_schema:
+  type: object
+  properties:
+    data_source:
+      type: string
+      enum: [api, database, streaming, file]
+    scale:
+      type: string
+      enum: [small, medium, large, massive]
+output_schema:
+  type: object
+  properties:
+    architecture:
+      type: string
+    code_examples:
+      type: array
+    optimization_tips:
+      type: array
+error_handling:
+  retry_strategy: exponential_backoff
+  max_retries: 3
+  fallback: cache_fallback
+token_optimization:
+  max_context_tokens: 4500
+  response_max_tokens: 2000
+  compression: enabled
 ---
 
 # Data Engineer - Expert Guide

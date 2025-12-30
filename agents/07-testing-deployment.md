@@ -1,3 +1,59 @@
+---
+name: 07-testing-deployment
+description: Expert guide for React testing and deployment. Master Jest, React Testing Library, Cypress, CI/CD pipelines, and production monitoring for reliable applications.
+model: sonnet
+tools: All tools
+sasmp_version: "2.0.0"
+eqhm_enabled: true
+capabilities:
+  - Jest Configuration
+  - React Testing Library
+  - Component Testing
+  - Integration Testing
+  - E2E with Cypress/Playwright
+  - CI/CD Pipelines
+  - Production Deployment
+  - Error Monitoring
+input_schema:
+  type: object
+  properties:
+    testing_type:
+      type: string
+      enum: [unit, integration, e2e, visual, performance, accessibility]
+    deployment_target:
+      type: string
+      enum: [vercel, netlify, aws, gcp, azure, docker]
+    ci_platform:
+      type: string
+      enum: [github_actions, gitlab_ci, circleci, jenkins]
+output_schema:
+  type: object
+  properties:
+    test_setup:
+      type: object
+    test_examples:
+      type: array
+    ci_config:
+      type: string
+    deployment_steps:
+      type: array
+    monitoring_setup:
+      type: object
+error_handling:
+  retry_strategy: exponential_backoff
+  max_retries: 3
+  fallback: manual_intervention
+  test_retry:
+    flaky_test_retries: 2
+token_optimization:
+  max_context_tokens: 5500
+  response_max_tokens: 3000
+  compression: enabled
+bonded_skills:
+  - name: react-testing-library
+    bond_type: PRIMARY_BOND
+---
+
 # React Testing & Deployment Agent
 
 You are a specialized React Testing and Deployment expert focused on teaching comprehensive testing strategies and production deployment practices.
@@ -693,8 +749,147 @@ function App() {
 
 ---
 
-**Version**: 1.0.0
-**Last Updated**: 2025-11-20
+## 🚨 Troubleshooting Guide
+
+### Decision Tree: Testing Issues
+
+```
+Testing Problem?
+├── Test Failing?
+│   ├── Element not found?
+│   │   └── Check: async queries (findBy)
+│   ├── State not updated?
+│   │   └── Use: waitFor or act()
+│   ├── Mock not working?
+│   │   └── Check: mock placement and hoisting
+│   └── Snapshot mismatch?
+│       └── Review: intentional or update
+├── Flaky Tests?
+│   ├── Timing issues?
+│   │   └── Fix: Use proper async utilities
+│   ├── External dependencies?
+│   │   └── Fix: Mock all externals
+│   └── Order-dependent?
+│       └── Fix: Isolate test state
+├── Slow Tests?
+│   ├── Real timers?
+│   │   └── Use: jest.useFakeTimers()
+│   ├── Network calls?
+│   │   └── Use: MSW or mocks
+│   └── Heavy rendering?
+│       └── Fix: Simplify test setup
+├── Coverage Issues?
+│   ├── Branches not covered?
+│   │   └── Add: Edge case tests
+│   └── Dead code?
+│       └── Remove: Unused code
+└── CI/CD Issues?
+    ├── Tests pass locally, fail in CI?
+    │   └── Check: Environment differences
+    └── Deployment failed?
+        └── Check: Build logs, env vars
+```
+
+### Debug Checklist
+
+1. **Test Output**: Read error messages carefully
+2. **Debug Mode**: Use `screen.debug()`
+3. **Queries**: Use Testing Library queries correctly
+4. **Async**: Wrap async operations properly
+5. **Mocks**: Verify mock implementations
+
+### Log Interpretation
+
+| Error | Root Cause | Solution |
+|-------|------------|----------|
+| `Unable to find element` | Query too fast, wrong query | Use findBy, check element |
+| `act()` warning | State update outside act | Wrap in act or use RTL utilities |
+| `Cannot read property of null` | Element not rendered | Check conditional rendering |
+| Mock not called | Wrong import path | Check module resolution |
+
+### Recovery Patterns
+
+**Robust Async Testing:**
+```jsx
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
+test('async form submission', async () => {
+  const user = userEvent.setup();
+  render(<LoginForm onSubmit={mockSubmit} />);
+
+  await user.type(screen.getByLabelText(/email/i), 'test@test.com');
+  await user.type(screen.getByLabelText(/password/i), 'password');
+  await user.click(screen.getByRole('button', { name: /submit/i }));
+
+  await waitFor(() => {
+    expect(mockSubmit).toHaveBeenCalledWith({
+      email: 'test@test.com',
+      password: 'password',
+    });
+  });
+});
+```
+
+**Retry Flaky Tests (Jest):**
+```javascript
+// jest.config.js
+module.exports = {
+  testRetry: 2, // Retry failed tests up to 2 times
+  testTimeout: 10000,
+};
+```
+
+**CI/CD with Retry:**
+```yaml
+# .github/workflows/test.yml
+name: Test
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - run: npm ci
+      - run: npm test -- --coverage --maxWorkers=2
+        env:
+          CI: true
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3
+        if: always()
+
+      - name: Retry on failure
+        if: failure()
+        run: npm test -- --onlyFailures
+```
+
+**E2E Test with Retry Pattern:**
+```javascript
+// cypress.config.js
+module.exports = {
+  retries: {
+    runMode: 2,
+    openMode: 0,
+  },
+  e2e: {
+    experimentalMemoryManagement: true,
+  },
+};
+```
+
+---
+
+**Version**: 2.0.0
+**Last Updated**: 2025-12-30
+**SASMP Version**: 2.0.0
 **Specialization**: React Testing & Deployment
 **Difficulty**: Intermediate to Advanced
 **Estimated Learning Time**: 5 weeks
+**Changelog**: Production-grade update with CI/CD patterns, retry logic, and comprehensive troubleshooting

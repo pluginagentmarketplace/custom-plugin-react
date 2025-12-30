@@ -1,24 +1,28 @@
 {
   "name": "react-developer-roadmap",
-  "version": "1.0.0",
-  "description": "Complete React ecosystem learning path based on roadmap.sh/react - Master modern React development from fundamentals to advanced patterns",
+  "version": "2.0.0",
+  "description": "Production-grade React ecosystem learning path - Master modern React development with SASMP v2.0 compliant agents and skills",
   "author": "Plugin Marketplace",
   "license": "SEE LICENSE IN LICENSE",
   "repository": "https://github.com/pluginagentmarketplace/custom-plugin-react",
   "homepage": "https://roadmap.sh/react",
+  "sasmp_version": "2.0.0",
+  "eqhm_compliant": true,
   "keywords": [
     "react",
     "learning",
     "roadmap",
     "frontend",
-    "javascript",
+    "typescript",
     "hooks",
     "components",
     "state-management",
     "routing",
     "performance",
     "testing",
-    "next.js"
+    "next.js",
+    "production-grade",
+    "sasmp"
   ],
   "agents": [
     "./agents/01-react-developer.md",
@@ -58,7 +62,7 @@
     "difficulty": "beginner-to-advanced",
     "estimated_learning_time": "4-8 months",
     "roadmap_source": "https://roadmap.sh/react",
-    "last_updated": "2025-11-20",
+    "last_updated": "2025-12-30",
     "categories": [
       "Core React Concepts",
       "Component Architecture",
@@ -73,6 +77,25 @@
       "Server-Side Rendering (SSR)",
       "Static Site Generation (SSG)",
       "Progressive Web Apps (PWA)"
-    ]
+    ],
+    "production_features": {
+      "error_handling": "exponential_backoff",
+      "retry_logic": true,
+      "circuit_breaker": true,
+      "observability": true,
+      "test_templates": true,
+      "troubleshooting_guides": true
+    }
+  },
+  "integrity": {
+    "agents_count": 14,
+    "skills_count": 7,
+    "commands_count": 4,
+    "hooks_count": 10,
+    "orphan_skills": 0,
+    "broken_links": 0,
+    "ghost_triggers": 0,
+    "circular_dependencies": 0,
+    "last_validated": "2025-12-30"
   }
 }

@@ -1,11 +1,48 @@
 ---
 name: 02-react-fullstack
-description: Expert guide for building scalable backend systems. Master API design (REST, GraphQL, gRPC), database architecture, authentication/authorization, caching strategies, microservices, async processing, and production deployment. Covers Node.js, Python, Java, Go with best practices for enterprise systems.
+description: Expert guide for React fullstack development. Master API design (REST, GraphQL), Next.js, database integration, authentication, and serverless patterns for production applications.
 model: sonnet
 tools: All tools
-sasmp_version: "1.3.0"
+sasmp_version: "2.0.0"
 eqhm_enabled: true
-capabilities: ["API Design & Architecture", "Database Mastery", "Authentication & Authorization", "Caching Strategies", "Performance Optimization", "Microservices Architecture", "Async Processing", "System Reliability", "Security Hardening", "Monitoring & Observability", "Scalability Planning", "Data Consistency"]
+capabilities:
+  - API Design (REST/GraphQL)
+  - Next.js App Router
+  - Database Integration
+  - Authentication & Authorization
+  - Caching Strategies
+  - Serverless Functions
+  - Real-time Features
+  - Performance Optimization
+input_schema:
+  type: object
+  properties:
+    architecture:
+      type: string
+      enum: [monolith, microservices, serverless, jamstack]
+    backend:
+      type: string
+      enum: [node, python, go, java]
+    database:
+      type: string
+      enum: [postgresql, mongodb, mysql, redis]
+output_schema:
+  type: object
+  properties:
+    architecture_recommendation:
+      type: string
+    code_examples:
+      type: array
+    deployment_strategy:
+      type: string
+error_handling:
+  retry_strategy: exponential_backoff
+  max_retries: 3
+  fallback: simplify_architecture
+token_optimization:
+  max_context_tokens: 5000
+  response_max_tokens: 2500
+  compression: enabled
 ---
 
 # Backend Developer - Expert Guide

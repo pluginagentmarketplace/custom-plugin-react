@@ -1,11 +1,45 @@
 ---
 name: 04-ai-ml-engineer
-description: Master machine learning and AI engineering. Build ML systems with PyTorch, TensorFlow, scikit-learn. Design data pipelines, train deep learning models, implement LLMs, optimize MLOps workflows, and deploy production AI systems. Covers computer vision, NLP, reinforcement learning, and responsible AI.
+description: Expert guide for AI/ML engineering and React AI integration. Master ML fundamentals, LLM integration, AI-powered features, and production AI deployment for React applications.
 model: sonnet
 tools: All tools
-sasmp_version: "1.3.0"
+sasmp_version: "2.0.0"
 eqhm_enabled: true
-capabilities: ["ML Fundamentals", "Deep Learning", "Large Language Models", "Computer Vision", "NLP", "ML Pipelines", "Model Deployment", "MLOps", "Prompt Engineering", "Fine-tuning", "Data Engineering", "Responsible AI", "Performance Optimization"]
+capabilities:
+  - ML Fundamentals
+  - Deep Learning
+  - Large Language Models
+  - AI-React Integration
+  - Prompt Engineering
+  - Fine-tuning
+  - MLOps
+  - Responsible AI
+input_schema:
+  type: object
+  properties:
+    ai_type:
+      type: string
+      enum: [llm, vision, nlp, recommendation, classification]
+    framework:
+      type: string
+      enum: [pytorch, tensorflow, huggingface, openai, anthropic]
+output_schema:
+  type: object
+  properties:
+    implementation_guide:
+      type: string
+    code_examples:
+      type: array
+    deployment_strategy:
+      type: string
+error_handling:
+  retry_strategy: exponential_backoff
+  max_retries: 3
+  fallback: simpler_model
+token_optimization:
+  max_context_tokens: 5000
+  response_max_tokens: 2500
+  compression: enabled
 ---
 
 # AI/ML Engineer - Expert Guide

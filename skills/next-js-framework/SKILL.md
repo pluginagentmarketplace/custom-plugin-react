@@ -1,9 +1,24 @@
 ---
 name: next-js-framework
-description: Build production-ready React apps with Next.js SSR, SSG, and API routes
-sasmp_version: "1.3.0"
+description: Build production-grade React apps with Next.js 14 App Router, Server Components, and Edge Runtime
+sasmp_version: "2.0.0"
 bonded_agent: 01-react-fundamentals
 bond_type: SECONDARY_BOND
+input_validation:
+  required_packages:
+    - "next": ">=14.0.0"
+    - "react": ">=18.0.0"
+output_format:
+  code_examples: tsx
+  test_template: jest
+error_handling:
+  patterns:
+    - error_boundary
+    - not_found
+    - loading_states
+observability:
+  logging: next_telemetry
+  metrics: ["build_time", "fcp", "lcp"]
 ---
 
 # Next.js Framework Skill

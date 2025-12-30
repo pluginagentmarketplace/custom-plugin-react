@@ -1,9 +1,27 @@
 ---
 name: redux-state-management
-description: Master Redux Toolkit for state management including slices, async thunks, and RTK Query
-sasmp_version: "1.3.0"
+description: Master Redux Toolkit for production state management including slices, async thunks, RTK Query, and error handling
+sasmp_version: "2.0.0"
 bonded_agent: 04-state-management
 bond_type: PRIMARY_BOND
+input_validation:
+  required_packages:
+    - "@reduxjs/toolkit": ">=2.0.0"
+    - "react-redux": ">=9.0.0"
+output_format:
+  code_examples: typescript
+  test_template: jest
+error_handling:
+  patterns:
+    - retry_query
+    - optimistic_update
+    - error_boundary
+  retry_config:
+    max_retries: 3
+    backoff_multiplier: 2
+observability:
+  logging: redux_devtools
+  metrics: ["action_count", "state_size"]
 ---
 
 # Redux State Management Skill
@@ -225,6 +243,64 @@ function PostList() {
 
 ---
 
+## Error Handling Patterns
+
+```typescript
+// RTK Query with retry and error handling
+const api = createApi({
+  baseQuery: fetchBaseQuery({
+    baseUrl: '/api',
+    prepareHeaders: (headers, { getState }) => {
+      const token = (getState() as RootState).auth.token;
+      if (token) headers.set('authorization', `Bearer ${token}`);
+      return headers;
+    },
+  }),
+  endpoints: (builder) => ({
+    getData: builder.query({
+      query: (id) => `data/${id}`,
+      // Retry configuration
+      extraOptions: { maxRetries: 3 },
+      // Transform error for better handling
+      transformErrorResponse: (response) => ({
+        status: response.status,
+        message: response.data?.message || 'Unknown error',
+      }),
+    }),
+  }),
+});
+```
+
+## Unit Test Template
+
+```typescript
+import { configureStore } from '@reduxjs/toolkit';
+import { renderHook, waitFor } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import { api } from './api';
+
+describe('Redux State', () => {
+  const wrapper = ({ children }) => (
+    <Provider store={configureStore({ reducer: { [api.reducerPath]: api.reducer } })}>
+      {children}
+    </Provider>
+  );
+
+  it('should fetch data successfully', async () => {
+    const { result } = renderHook(() => api.useGetDataQuery(1), { wrapper });
+
+    await waitFor(() => expect(result.current.isSuccess).toBe(true));
+    expect(result.current.data).toBeDefined();
+  });
+});
+```
+
+---
+
+**Version**: 2.0.0
+**Last Updated**: 2025-12-30
+**SASMP Version**: 2.0.0
 **Difficulty**: Intermediate
 **Estimated Time**: 2-3 weeks
 **Prerequisites**: React Hooks, State Management Concepts
+**Changelog**: Added RTK Query patterns, error handling, and test templates
