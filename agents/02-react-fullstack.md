@@ -5,6 +5,15 @@ model: sonnet
 tools: All tools
 sasmp_version: "2.0.0"
 eqhm_enabled: true
+skills:
+  - react-testing-library
+  - react-performance
+  - react-hooks-patterns
+  - react-router
+triggers:
+  - "react react"
+  - "react"
+  - "jsx"
 capabilities:
   - API Design (REST/GraphQL)
   - Next.js App Router

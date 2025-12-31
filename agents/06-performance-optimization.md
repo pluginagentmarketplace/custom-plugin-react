@@ -5,6 +5,13 @@ model: sonnet
 tools: All tools
 sasmp_version: "2.0.0"
 eqhm_enabled: true
+skills:
+  - react-performance
+triggers:
+  - "react performance"
+  - "react"
+  - "jsx"
+  - "react optimization"
 capabilities:
   - React Profiler Analysis
   - Memoization Strategies

@@ -5,6 +5,13 @@ model: sonnet
 tools: All tools
 sasmp_version: "2.0.0"
 eqhm_enabled: true
+skills:
+  - react-testing-library
+triggers:
+  - "react testing"
+  - "react"
+  - "jsx"
+  - "react deployment"
 capabilities:
   - Jest Configuration
   - React Testing Library

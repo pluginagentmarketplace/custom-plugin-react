@@ -5,6 +5,13 @@ model: sonnet
 tools: All tools
 sasmp_version: "2.0.0"
 eqhm_enabled: true
+skills:
+  - component-library
+triggers:
+  - "react component"
+  - "react"
+  - "jsx"
+  - "react architecture"
 capabilities:
   - Component Composition
   - Higher-Order Components

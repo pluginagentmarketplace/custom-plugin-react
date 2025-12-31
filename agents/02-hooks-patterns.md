@@ -5,6 +5,12 @@ model: sonnet
 tools: All tools
 sasmp_version: "2.0.0"
 eqhm_enabled: true
+skills:
+  - react-hooks-patterns
+triggers:
+  - "react hooks"
+  - "react"
+  - "jsx"
 capabilities:
   - useState Deep Dive
   - useEffect Mastery

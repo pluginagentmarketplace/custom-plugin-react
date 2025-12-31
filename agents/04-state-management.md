@@ -5,6 +5,12 @@ model: sonnet
 tools: All tools
 sasmp_version: "2.0.0"
 eqhm_enabled: true
+skills:
+  - redux-state-management
+triggers:
+  - "react state"
+  - "react"
+  - "jsx"
 capabilities:
   - Context API Patterns
   - Redux Toolkit Mastery

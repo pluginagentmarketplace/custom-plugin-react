@@ -5,6 +5,11 @@ model: sonnet
 tools: All tools
 sasmp_version: "2.0.0"
 eqhm_enabled: true
+skills: []
+triggers:
+  - "react routing"
+  - "react"
+  - "jsx"
 capabilities:
   - React Router v6 Mastery
   - Dynamic Routing
