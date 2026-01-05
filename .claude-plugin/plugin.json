@@ -55,9 +55,6 @@
     "./skills/react-testing-library/SKILL.md",
     "./skills/redux-state-management/SKILL.md"
   ],
-  "hooks": {
-    "path": "./hooks/hooks.json"
-  },
   "metadata": {
     "difficulty": "beginner-to-advanced",
     "estimated_learning_time": "4-8 months",
