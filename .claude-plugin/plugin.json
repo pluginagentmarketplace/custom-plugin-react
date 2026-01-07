@@ -6,7 +6,6 @@
   "license": "SEE LICENSE IN LICENSE",
   "repository": "https://github.com/pluginagentmarketplace/custom-plugin-react",
   "homepage": "https://roadmap.sh/react",
-  "sasmp_version": "2.0.0",
   "eqhm_compliant": true,
   "keywords": [
     "react",
@@ -83,16 +82,5 @@
       "test_templates": true,
       "troubleshooting_guides": true
     }
-  },
-  "integrity": {
-    "agents_count": 14,
-    "skills_count": 7,
-    "commands_count": 4,
-    "hooks_count": 10,
-    "orphan_skills": 0,
-    "broken_links": 0,
-    "ghost_triggers": 0,
-    "circular_dependencies": 0,
-    "last_validated": "2025-12-30"
   }
 }
